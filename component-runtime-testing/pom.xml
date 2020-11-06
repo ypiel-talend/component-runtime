@@ -34,6 +34,7 @@
     <module>component-runtime-http-junit</module>
     <module>component-runtime-junit-base</module>
     <module>component-runtime-beam-junit</module>
+    <module>component-runtime-beam-bom</module>
   </modules>
 
   <properties>
