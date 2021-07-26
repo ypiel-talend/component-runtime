@@ -1,3 +1,18 @@
+/**
+ * Copyright (C) 2006-2021 Talend Inc. - www.talend.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.talend.sdk.component.runtime.beam.spi.record;
 
 import java.util.ArrayList;
@@ -56,8 +71,7 @@ public class AvroRecordBenchTest {
         System.out.println("duration optim : " + duration);
     }
 
-    private Record buildRecord(final RecordBuilderFactory factory,
-            final Schema schema, final String valuePrefix) {
+    private Record buildRecord(final RecordBuilderFactory factory, final Schema schema, final String valuePrefix) {
         final Record.Builder builder = factory.newRecordBuilder(schema);
         for (int i = 0; i < nbeField; i++) {
             builder.withString("e" + i, valuePrefix + i);
@@ -68,7 +82,9 @@ public class AvroRecordBenchTest {
     private Schema buildSchema(final RecordBuilderFactory factory) {
         final List<Schema.Entry> fields = new ArrayList<>(nbeField);
         for (int i = 0; i < nbeField; i++) {
-            final Schema.Entry entry = factory.newEntryBuilder().withType(Schema.Type.STRING) //
+            final Schema.Entry entry = factory
+                    .newEntryBuilder()
+                    .withType(Schema.Type.STRING) //
                     .withNullable(true) //
                     .withName("e" + i) //
                     .build();
