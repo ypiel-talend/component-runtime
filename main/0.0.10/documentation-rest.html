@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talend Component Kit Developer Reference Guide :: Talend Component REST API Documentation</title>
+    <link rel="canonical" href="https://talend.github.io/component-runtime/main/1.1.0/documentation-rest.html">
+    <meta name="generator" content="Talend Component Kit Generator">
+<meta name="date" content="2018-09-28T09:18:35.555Z" scheme="YYYY-MM-DDTHH:mm:ss.sssZ">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/instantsearch.js/2.8.0/instantsearch.min.css" integrity="sha256-vusmcqkVvKdkwoueSJZLlO9y2P+Lp9fN3WwQUV9Uwfw=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/instantsearch.js/2.8.0/instantsearch-theme-algolia.min.css" integrity="sha256-ZqsS4QagZnfArbOyheCO4qVjzzsMbg/WMvf5tLtId/Q=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/idea.min.css" integrity="sha256-rD61BPsgKHzJPyg7vpXaYOw6tMYuY2fz1p9033NYeM8=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@talend/bootstrap-theme@0.200.1/dist/bootstrap.css">
+<link rel="stylesheet" href="../../_/css/talend.css">
+<link rel="shortcut icon" href="../../_/images/favicon_0.ico" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-PSBN"></script>
+    <script>dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','GTM-PSBN')</script>
+  </head>
+  <body>
+      <svg xmlns="http://www.w3.org/2000/svg" focusable="false" style="display: none;">
+    <symbol id="talend-logo-square">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path fill="#FFF" d="M9.694 14.652a1.076 1.076 0 0 1-.715.421 1.086 1.086 0 1 1-.148-2.158c.235 0 .462.075.652.22.23.173.38.427.42.714a1.07 1.07 0 0 1-.209.803M2.15 2.627A1.084 1.084 0 1 1 .418 1.322 1.084 1.084 0 0 1 2.15 2.627m11.383 2.491a2.46 2.46 0 0 0-1.482.494L8.94 1.798a.59.59 0 1 0-.156.125l3.111 3.816a2.486 2.486 0 0 0-.557.718l-8.84-4.062c.065-.19.086-.394.057-.599A1.274 1.274 0 0 0 2.058.95a1.278 1.278 0 0 0-.952-.247 1.286 1.286 0 0 0 .356 2.544 1.279 1.279 0 0 0 .956-.668l8.838 4.06c-.11.264-.176.55-.187.85H3.563a.788.788 0 0 0-.31-.533.799.799 0 0 0-1.113.155.786.786 0 0 0 .156 1.105.799.799 0 0 0 1.267-.527h7.506c.014.323.088.63.215.91l-1.903.941a.592.592 0 1 0 .089.179l1.904-.94c.162.292.382.548.645.753l-2.473 3.404a1.28 1.28 0 0 0-1.742.291 1.288 1.288 0 0 0 .253 1.8 1.28 1.28 0 0 0 .952.246c.34-.048.64-.225.847-.499.207-.274.294-.612.246-.952a1.276 1.276 0 0 0-.399-.763l2.479-3.41a2.468 2.468 0 1 0 1.352-4.53"></path>
+        </svg>
+    </symbol>
+    <symbol id="talend-component-kit-positive">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <g fill="none">
+                <path fill="#005695" d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+                <path fill="#FFF" d="M5.69 10.662a2.3 2.3 0 0 0 1.425.492 2.3 2.3 0 0 0 1.664-.709l-.631-.632 1.005-1.005a.33.33 0 0 0 0-.466.332.332 0 0 0-.467 0L7.68 9.347 6.633 8.3l1.005-1.005a.33.33 0 0 0-.467-.466L6.167 7.832l-.653-.652a2.3 2.3 0 0 0-.71 1.664c0 .54.187 1.037.498 1.43L3.878 11.7a.721.721 0 0 0-.358.027 5.824 5.824 0 0 1-.722-6.368c1.364-2.7 4.612-3.914 7.41-2.777l-.348.69 1.584-.369-.643-1.495-.351.695C7.384.832 3.818 2.15 2.32 5.117a6.359 6.359 0 0 0 .798 6.962.704.704 0 0 0 1.26.631.704.704 0 0 0-.036-.699l1.349-1.349z"></path>
+                <path fill="#FFF" d="M12.623 3.031a.706.706 0 0 0-.973.894l-1.296 1.298a2.304 2.304 0 0 0-3.092.215l3.266 3.265a2.304 2.304 0 0 0 .213-3.092l1.299-1.297a.701.701 0 0 0 .504.006 5.838 5.838 0 0 1 .675 6.311c-1.332 2.636-4.524 3.871-7.284 2.826l.339-.67-1.585.368.643 1.494.36-.712c3.028 1.18 6.538-.162 8.005-3.064a6.375 6.375 0 0 0-.758-6.912.703.703 0 0 0-.316-.93z"></path>
+            </g>
+        </svg>
+    </symbol>
+</svg>
+
+<header class="global-header">
+  <nav class="navbar navbar-default">
+      <div class="navbar-text-content nav navbar-nav">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <button aria-label="Go to Portal" id="header-talend-logo" type="button" class="btn-icon-only btn btn-link">
+            <svg name="talend-logo-square" focusable="false" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#talend-logo-square"></use>
+            </svg>
+        </button>
+        <button aria-label="Kit logo" id="header-kit-logo" type="button" class="btn-icon-only btn btn-link">
+          <svg name="talend-component-kit-positive" focusable="false" aria-hidden="true">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#talend-component-kit-positive"></use>
+          </svg>
+        </button>
+        <a class="navbar-single-link" href="index.html">Talend Component Kit</a>
+        <div class="btn-group navbar-versions">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Version 0.0.10 <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+                <li class="navbar-item version is-latest">
+                    <a href="../1.1.0/index.html">1.1.0</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../1.0.4/index.html">1.0.4</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../1.0.3/index.html">1.0.3</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../1.0.2/index.html">1.0.2</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../1.0.1/index.html">1.0.1</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../1.0.0/index.html">1.0.0</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.12/index.html">0.0.12</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.11/index.html">0.0.11</a>
+                </li>
+                <li class="navbar-item version is-current">
+                    <a href="index.html">0.0.10</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.9/index.html">0.0.9</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.8/index.html">0.0.8</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.7/index.html">0.0.7</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.6/index.html">0.0.6</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.5/index.html">0.0.5</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.4/index.html">0.0.4</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.3/index.html">0.0.3</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.2/index.html">0.0.2</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.1/index.html">0.0.1</a>
+                </li>
+          </ul>
+        </div>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Repositories <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a class="navbar-item" href="https://github.com/talend/component-api" target="_blank">API</a></li>
+              <li><a class="navbar-item" href="https://github.com/talend/component-runtime" target="_blank">Runtime</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a class="navbar-item" href="contributors.html">Contributors</a></li>
+              <li><a class="navbar-item" href="https://community.talend.com/t5/Component-Development/bd-p/ComponentDevelopment" target="_blank">Forum</a></li>
+              <li><a class="navbar-item" href="https://help.talend.com/" target="_blank">Talend Help Center</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form role="search" action="search.html" class="navbar-form navbar-right">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input class="form-control" type="text" placeholder="Search" name="query" id="searchInput">
+          </div>
+        </form>
+      </div>
+    </nav>
+</header>
+            <main class="main">
+              <div class="navigation-container grey-background hidden-xs col-sm-2" data-component="main" data-version="0.0.10">
+  <aside class="navigation" role="navigation">
+    <div class="panels">
+      <div class="input-group nav-filter-group">
+        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+        <input class="form-control" type="text" placeholder="Filter menu entries..." id="navFilterInput">
+      </div>
+      <div class="navigation-menu is-active" data-panel="menu">
+        <nav class="nav-menu">
+          <!-- <label>Talend Component Kit Developer Reference Guide</label> -->
+          <ul class="nav nav-list tree" >
+  <li data-depth="0">
+      <label class="tree-toggler nav-header"><i class="fa fa-angle-right"></i><span>Programming Model</span></label>
+    <ul class="nav nav-list tree" >
+  <li data-depth="1">
+    <a class="menu-link" href="component-definition.html">Definition Model</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="component-configuration.html">Configuration</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="component-registering.html">Registration</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="gallery.html">Widget Gallery</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="component-internationalization.html">Labels and i18n</a>
+  </li>
+</ul>
+  </li>
+  <li data-depth="0">
+      <label class="tree-toggler nav-header"><i class="fa fa-angle-right"></i><span>Package</span></label>
+    <ul class="nav nav-list tree" >
+  <li data-depth="1">
+    <a class="menu-link" href="component-loading.html">Loading</a>
+  </li>
+</ul>
+  </li>
+  <li data-depth="0">
+      <label class="tree-toggler nav-header"><i class="fa fa-angle-right"></i><span>Build</span></label>
+    <ul class="nav nav-list tree" >
+  <li data-depth="1">
+    <a class="menu-link" href="build-tools-maven.html">Maven</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="build-tools-gradle.html">Gradle</a>
+  </li>
+</ul>
+  </li>
+  <li data-depth="0">
+      <label class="tree-toggler nav-header"><i class="fa fa-angle-right"></i><span>Services</span></label>
+    <ul class="nav nav-list tree" >
+  <li data-depth="1">
+    <a class="menu-link" href="services-internationalization.html">Internationalization</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="services-actions.html">Actions</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="services-built-in.html">Built-in services</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="services-interceptors.html">Interceptors</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="services-custom-api.html">Extend the API</a>
+  </li>
+</ul>
+  </li>
+  <li data-depth="0">
+      <label class="tree-toggler nav-header"><i class="fa fa-angle-right"></i><span>Execute</span></label>
+    <ul class="nav nav-list tree" >
+  <li data-depth="1">
+    <a class="menu-link" href="services-pipeline.html">Simple/Test Pipeline API</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="https://beam.apache.org/documentation/programming-guide/#creating-a-pipeline">Beam Pipeline API</a>
+  </li>
+</ul>
+  </li>
+  <li data-depth="0">
+      <label class="tree-toggler nav-header"><i class="fa fa-angle-right"></i><span>Testing</span></label>
+    <ul class="nav nav-list tree" >
+  <li data-depth="1">
+    <a class="menu-link" href="testing-best-practices.html">JUnit Integration</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="testing-junit.html">Testing HTTP API</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="testing-beam.html">Beam case</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="testing-spark.html">Spark and JUnit</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="testing-multiple-envs.html">Multiple environments for the same tests</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="testing-maven-passwords.html">Secrets/Passwords and Maven</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="testing-generating-data.html">Generating data?</a>
+  </li>
+</ul>
+  </li>
+  <li data-depth="0">
+      <label class="tree-toggler nav-header"><i class="fa fa-angle-right"></i><span>Web</span></label>
+    <ul class="nav nav-list tree" >
+  <li data-depth="1">
+    <a class="menu-link" href="documentation-rest.html">Server</a>
+  </li>
+</ul>
+  </li>
+  <li data-depth="0">
+      <label class="tree-toggler nav-header"><i class="fa fa-angle-right"></i><span>Tutorials</span></label>
+    <ul class="nav nav-list tree" >
+  <li data-depth="1">
+    <a class="menu-link" href="tutorial-generate-project-using-starter.html">Generate a component</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="tutorial-create-an-input-component.html">Create an input component</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="tutorial-create-an-output-component.html">Create an output component</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="tutorial-test-your-components.html">Test your components</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="tutorial-configuration-sensitive-data.html">Configuration and sensitive data</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="tutorial-create-components-rest-api.html">Create components for REST API</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="tutorial-test-rest-api.html">How to test a REST API</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="tutorial-dev-vs-ci-setup.html">Dev vs CI setup</a>
+  </li>
+  <li data-depth="1">
+    <a class="menu-link" href="tutorial-talend-intellij-plugin-usage.html">Talend Intellij plugin</a>
+  </li>
+</ul>
+  </li>
+</ul>
+        </nav>
+      </div>
+    </div>
+  </aside>
+</div>
+              <div class="col-xs-12 col-sm-10 maincontent">
+                <div class="toolbar" role="navigation">
+
+    <ol class="breadcrumb">
+      <li class="crumb"><a href="#">Web</a></li>
+      <li class="crumb active"><a href="documentation-rest.html">Server</a></li>
+    </ol>
+</div>
+                <article class="doc">
+        <div class="row">
+          <div class="col-sm-9 row">
+              <h1>Talend Component REST API Documentation</h1>
+            <div class="article-content">
+              <div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+a test environment is available on Heroku and browable using Talend Component Kit Server
+<a href="https://talend-component-kit.restlet.io" target="_blank" rel="noopener">Restlet Studio</a> instance.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_http_api"><a class="anchor" href="#_http_api"></a>HTTP API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The HTTP API intends to expose over HTTP most of Talend Component features, it is a standalone Java HTTP server.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+WebSocket protocol is activated for the endpoints as well, instead of <code>/api/v1</code> they uses the base <code>/websocket/v1</code>, see WebSocket part for more details.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Here is the API:</p>
+</div>
+<div class="sect2">
+<h3 id="_rest_resources_of_component_runtime_server"><a class="anchor" href="#_rest_resources_of_component_runtime_server"></a>REST resources of Component Runtime :: Server</h3>
+<div class="paragraph">
+<p>0.0.10-SNAPSHOT</p>
+</div>
+<div class="sect3">
+<h4 id="_code_post_api_v1_action_execute_code"><a class="anchor" href="#_code_post_api_v1_action_execute_code"></a><code>POST api/v1/action/execute</code></h4>
+<div class="paragraph">
+<p>This endpoint will execute any UI action and serialize the response as a JSON (pojo model)
+It takes as input the family, type and name of the related action to identify it and its configuration
+as a flat key value set using the same kind of mapping than for components (option path as key).</p>
+</div>
+<div class="sect4">
+<h5 id="_request"><a class="anchor" href="#_request"></a>Request</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code><br>
+<strong>Request Body</strong>: (<code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code>)
+<strong>Query Param</strong>: <code>action</code>, <code>java.lang.String</code><br>
+<strong>Query Param</strong>: <code>family</code>, <code>java.lang.String</code><br>
+<strong>Query Param</strong>: <code>type</code>, <code>java.lang.String</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response"><a class="anchor" href="#_response"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code"><a class="anchor" href="#_code_200_ok_code"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>java.lang.RuntimeException</code>)</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_code_400_bad_request_code"><a class="anchor" href="#_code_400_bad_request_code"></a><code>400 Bad Request</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>org.talend.sdk.component.server.front.model.error.ErrorPayload</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "code": "ACTION_ERROR|ACTION_MISSING|BAD_FORMAT|COMPONENT_MISSING|CONFIGURATION_MISSING|DESIGN_MODEL_MISSING|ICON_MISSING|PLUGIN_MISSING|UNAUTHORIZED|UNEXPECTED",
+    "description": "string"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_code_404_not_found_code"><a class="anchor" href="#_code_404_not_found_code"></a><code>404 Not Found</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>org.talend.sdk.component.server.front.model.error.ErrorPayload</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "code": "ACTION_ERROR|ACTION_MISSING|BAD_FORMAT|COMPONENT_MISSING|CONFIGURATION_MISSING|DESIGN_MODEL_MISSING|ICON_MISSING|PLUGIN_MISSING|UNAUTHORIZED|UNEXPECTED",
+    "description": "string"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_get_api_v1_action_index_code"><a class="anchor" href="#_code_get_api_v1_action_index_code"></a><code>GET api/v1/action/index</code></h4>
+<div class="paragraph">
+<p>This endpoint returns the list of available actions for a certain family and potentially filters the "
+output limiting it to some families and types of actions.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_2"><a class="anchor" href="#_request_2"></a>Request</h5>
+<div class="paragraph">
+<p><em>No body</em><br>
+<strong>Query Param</strong>: <code>family</code>, <code>java.lang.String</code><br>
+<strong>Query Param</strong>: <code>language</code>, <code>java.lang.String</code><br>
+<strong>Query Param</strong>: <code>type</code>, <code>java.lang.String</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_2"><a class="anchor" href="#_response_2"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code_2"><a class="anchor" href="#_code_200_ok_code_2"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>org.talend.sdk.component.server.front.model.ActionList</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "items": [
+        {
+            "component": "string",
+            "name": "string",
+            "properties": [
+                {
+                    "defaultValue": "string",
+                    "displayName": "string",
+                    "metadata": {
+                    },
+                    "name": "string",
+                    "path": "string",
+                    "placeholder": "string",
+                    "proposalDisplayNames": {
+                    },
+                    "type": "string",
+                    "validation": {
+                        "enumValues": [
+                            "string"
+                        ],
+                        "max": 0,
+                        "maxItems": 0,
+                        "maxLength": 0,
+                        "min": 0,
+                        "minItems": 0,
+                        "minLength": 0,
+                        "pattern": "string",
+                        "required": false,
+                        "uniqueItems": false
+                    }
+                }
+            ],
+            "type": "string"
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_get_api_v1_component_dependencies_code"><a class="anchor" href="#_code_get_api_v1_component_dependencies_code"></a><code>GET api/v1/component/dependencies</code></h4>
+<div class="paragraph">
+<p>Returns a list of dependencies for the given components.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+don&#8217;t forget to add the component itself since it will not be part of the dependencies.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Then you can use /dependency/{id} to download the binary.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_3"><a class="anchor" href="#_request_3"></a>Request</h5>
+<div class="paragraph">
+<p><em>No body</em><br>
+<strong>Query Param</strong>: <code>identifier</code>, <code>java.lang.String</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_3"><a class="anchor" href="#_response_3"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code_3"><a class="anchor" href="#_code_200_ok_code_3"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>org.talend.sdk.component.server.front.model.Dependencies</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "dependencies": {
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_get_api_v1_component_dependency_id_code"><a class="anchor" href="#_code_get_api_v1_component_dependency_id_code"></a><code>GET api/v1/component/dependency/{id}</code></h4>
+<div class="paragraph">
+<p>Return a binary of the dependency represented by <code>id</code>.
+It can be maven coordinates for dependencies or a component id.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_4"><a class="anchor" href="#_request_4"></a>Request</h5>
+<div class="paragraph">
+<p><em>No body</em><br>
+<strong>Path Param</strong>: <code>id</code>, <code>java.lang.String</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_4"><a class="anchor" href="#_response_4"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code_4"><a class="anchor" href="#_code_200_ok_code_4"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>javax.ws.rs.core.StreamingOutput</code>)</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_code_404_not_found_code_2"><a class="anchor" href="#_code_404_not_found_code_2"></a><code>404 Not Found</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>org.talend.sdk.component.server.front.model.error.ErrorPayload</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "code": "ACTION_ERROR|ACTION_MISSING|BAD_FORMAT|COMPONENT_MISSING|CONFIGURATION_MISSING|DESIGN_MODEL_MISSING|ICON_MISSING|PLUGIN_MISSING|UNAUTHORIZED|UNEXPECTED",
+    "description": "string"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_get_api_v1_component_details_code"><a class="anchor" href="#_code_get_api_v1_component_details_code"></a><code>GET api/v1/component/details</code></h4>
+<div class="paragraph">
+<p>Returns the set of metadata about a few components identified by their 'id'.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_5"><a class="anchor" href="#_request_5"></a>Request</h5>
+<div class="paragraph">
+<p><em>No body</em><br>
+<strong>Query Param</strong>: <code>identifiers</code>, <code>java.lang.String</code><br>
+<strong>Query Param</strong>: <code>language</code>, <code>java.lang.String</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_5"><a class="anchor" href="#_response_5"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code_5"><a class="anchor" href="#_code_200_ok_code_5"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>org.talend.sdk.component.server.front.model.ComponentDetailList</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "details": [
+        {
+            "actions": [
+                {
+                    "family": "string",
+                    "name": "string",
+                    "properties": [
+                        {
+                            "defaultValue": "string",
+                            "displayName": "string",
+                            "metadata": {
+                            },
+                            "name": "string",
+                            "path": "string",
+                            "placeholder": "string",
+                            "proposalDisplayNames": {
+                            },
+                            "type": "string",
+                            "validation": {
+                                "enumValues": [
+                                    "string"
+                                ],
+                                "max": 0,
+                                "maxItems": 0,
+                                "maxLength": 0,
+                                "min": 0,
+                                "minItems": 0,
+                                "minLength": 0,
+                                "pattern": "string",
+                                "required": false,
+                                "uniqueItems": false
+                            }
+                        }
+                    ],
+                    "type": "string"
+                }
+            ],
+            "displayName": "string",
+            "icon": "string",
+            "id": {
+                "family": "string",
+                "familyId": "string",
+                "id": "string",
+                "name": "string",
+                "plugin": "string",
+                "pluginLocation": "string"
+            },
+            "inputFlows": [
+                "string"
+            ],
+            "links": [
+                {
+                    "contentType": "string",
+                    "name": "string",
+                    "path": "string"
+                }
+            ],
+            "outputFlows": [
+                "string"
+            ],
+            "properties": [
+                {
+                    "defaultValue": "string",
+                    "displayName": "string",
+                    "metadata": {
+                    },
+                    "name": "string",
+                    "path": "string",
+                    "placeholder": "string",
+                    "proposalDisplayNames": {
+                    },
+                    "type": "string",
+                    "validation": {
+                        "enumValues": [
+                            "string"
+                        ],
+                        "max": 0,
+                        "maxItems": 0,
+                        "maxLength": 0,
+                        "min": 0,
+                        "minItems": 0,
+                        "minLength": 0,
+                        "pattern": "string",
+                        "required": false,
+                        "uniqueItems": false
+                    }
+                }
+            ],
+            "type": "string",
+            "version": 0
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_code_400_bad_request_code_2"><a class="anchor" href="#_code_400_bad_request_code_2"></a><code>400 Bad Request</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>java.util.Map&lt;java.lang.String, org.talend.sdk.component.server.front.model.error.ErrorPayload&gt;</code>)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_get_api_v1_component_icon_family_id_code"><a class="anchor" href="#_code_get_api_v1_component_icon_family_id_code"></a><code>GET api/v1/component/icon/family/{id}</code></h4>
+<div class="paragraph">
+<p>Returns a particular family icon in raw bytes.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_6"><a class="anchor" href="#_request_6"></a>Request</h5>
+<div class="paragraph">
+<p><em>No body</em><br>
+<strong>Path Param</strong>: <code>id</code>, <code>java.lang.String</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_6"><a class="anchor" href="#_response_6"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code_6"><a class="anchor" href="#_code_200_ok_code_6"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>byte[]</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_code_404_not_found_code_3"><a class="anchor" href="#_code_404_not_found_code_3"></a><code>404 Not Found</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>org.talend.sdk.component.server.front.model.error.ErrorPayload</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "code": "ACTION_ERROR|ACTION_MISSING|BAD_FORMAT|COMPONENT_MISSING|CONFIGURATION_MISSING|DESIGN_MODEL_MISSING|ICON_MISSING|PLUGIN_MISSING|UNAUTHORIZED|UNEXPECTED",
+    "description": "string"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_get_api_v1_component_icon_id_code"><a class="anchor" href="#_code_get_api_v1_component_icon_id_code"></a><code>GET api/v1/component/icon/{id}</code></h4>
+<div class="paragraph">
+<p>Returns a particular component icon in raw bytes.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_7"><a class="anchor" href="#_request_7"></a>Request</h5>
+<div class="paragraph">
+<p><em>No body</em><br>
+<strong>Path Param</strong>: <code>id</code>, <code>java.lang.String</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_7"><a class="anchor" href="#_response_7"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code_7"><a class="anchor" href="#_code_200_ok_code_7"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>byte[]</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_code_404_not_found_code_4"><a class="anchor" href="#_code_404_not_found_code_4"></a><code>404 Not Found</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>org.talend.sdk.component.server.front.model.error.ErrorPayload</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "code": "ACTION_ERROR|ACTION_MISSING|BAD_FORMAT|COMPONENT_MISSING|CONFIGURATION_MISSING|DESIGN_MODEL_MISSING|ICON_MISSING|PLUGIN_MISSING|UNAUTHORIZED|UNEXPECTED",
+    "description": "string"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_get_api_v1_component_index_code"><a class="anchor" href="#_code_get_api_v1_component_index_code"></a><code>GET api/v1/component/index</code></h4>
+<div class="paragraph">
+<p>Returns the list of available components.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_8"><a class="anchor" href="#_request_8"></a>Request</h5>
+<div class="paragraph">
+<p><em>No body</em><br>
+<strong>Query Param</strong>: <code>includeIconContent</code>, <code>boolean</code><br>
+<strong>Query Param</strong>: <code>language</code>, <code>java.lang.String</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_8"><a class="anchor" href="#_response_8"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code_8"><a class="anchor" href="#_code_200_ok_code_8"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>org.talend.sdk.component.server.front.model.ComponentIndices</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "components": [
+        {
+            "categories": [
+                "string"
+            ],
+            "displayName": "string",
+            "familyDisplayName": "string",
+            "icon": {
+                "customIcon": {
+                },
+                "customIconType": "string",
+                "icon": "string"
+            },
+            "iconFamily": {
+                "customIcon": {
+                },
+                "customIconType": "string",
+                "icon": "string"
+            },
+            "id": {
+                "family": "string",
+                "familyId": "string",
+                "id": "string",
+                "name": "string",
+                "plugin": "string",
+                "pluginLocation": "string"
+            },
+            "links": [
+                {
+                    "contentType": "string",
+                    "name": "string",
+                    "path": "string"
+                }
+            ],
+            "version": 0
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_post_api_v1_component_migrate_id_configurationversion_code"><a class="anchor" href="#_code_post_api_v1_component_migrate_id_configurationversion_code"></a><code>POST api/v1/component/migrate/{id}/{configurationVersion}</code></h4>
+<div class="paragraph">
+<p>Allows to migrate a component configuration without calling any component execution.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_9"><a class="anchor" href="#_request_9"></a>Request</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code><br>
+<strong>Request Body</strong>: (<code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code>)
+<strong>Path Param</strong>: <code>configurationVersion</code>, <code>int</code><br>
+<strong>Path Param</strong>: <code>id</code>, <code>java.lang.String</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_9"><a class="anchor" href="#_response_9"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code_9"><a class="anchor" href="#_code_200_ok_code_9"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code>)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_get_api_v1_configurationtype_details_code"><a class="anchor" href="#_code_get_api_v1_configurationtype_details_code"></a><code>GET api/v1/configurationtype/details</code></h4>
+<div class="paragraph">
+<p>Returns the set of metadata about a few configurations identified by their 'id'.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_10"><a class="anchor" href="#_request_10"></a>Request</h5>
+<div class="paragraph">
+<p><em>No body</em><br>
+<strong>Query Param</strong>: <code>identifiers</code>, <code>java.lang.String</code><br>
+<strong>Query Param</strong>: <code>language</code>, <code>java.lang.String</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_10"><a class="anchor" href="#_response_10"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code_10"><a class="anchor" href="#_code_200_ok_code_10"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>org.talend.sdk.component.server.front.model.ConfigTypeNodes</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "nodes": {
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_get_api_v1_configurationtype_index_code"><a class="anchor" href="#_code_get_api_v1_configurationtype_index_code"></a><code>GET api/v1/configurationtype/index</code></h4>
+<div class="paragraph">
+<p>Returns all available configuration type - storable models.
+Note that the lightPayload flag allows to load all of them at once when you eagerly need
+to create a client model for all configurations.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_11"><a class="anchor" href="#_request_11"></a>Request</h5>
+<div class="paragraph">
+<p><em>No body</em><br>
+<strong>Query Param</strong>: <code>language</code>, <code>java.lang.String</code><br>
+<strong>Query Param</strong>: <code>lightPayload</code>, <code>boolean</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_11"><a class="anchor" href="#_response_11"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code_11"><a class="anchor" href="#_code_200_ok_code_11"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>org.talend.sdk.component.server.front.model.ConfigTypeNodes</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "nodes": {
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_post_api_v1_configurationtype_migrate_id_configurationversion_code"><a class="anchor" href="#_code_post_api_v1_configurationtype_migrate_id_configurationversion_code"></a><code>POST api/v1/configurationtype/migrate/{id}/{configurationVersion}</code></h4>
+<div class="paragraph">
+<p>Allows to migrate a configuration without calling any component execution.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_12"><a class="anchor" href="#_request_12"></a>Request</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code><br>
+<strong>Request Body</strong>: (<code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code>)
+<strong>Path Param</strong>: <code>configurationVersion</code>, <code>int</code><br>
+<strong>Path Param</strong>: <code>id</code>, <code>java.lang.String</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_12"><a class="anchor" href="#_response_12"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code_12"><a class="anchor" href="#_code_200_ok_code_12"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code>)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_get_api_v1_documentation_component_id_code"><a class="anchor" href="#_code_get_api_v1_documentation_component_id_code"></a><code>GET api/v1/documentation/component/{id}</code></h4>
+<div class="paragraph">
+<p>Returns an asciidoctor version of the documentation for the component represented by its identifier <code>id</code>.</p>
+</div>
+<div class="paragraph">
+<p>Format can be either asciidoc or html - if not it will fallback on asciidoc - and if html is selected you get
+a partial document.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+it is recommended to use asciidoc format and handle the conversion on your side if you can,
+the html flavor handles a limited set of the asciidoc syntax only like plain arrays, paragraph and titles.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The documentation will likely be the family documentation but you can use anchors to access a particular
+component (_componentname_inlowercase).</p>
+</div>
+<div class="sect4">
+<h5 id="_request_13"><a class="anchor" href="#_request_13"></a>Request</h5>
+<div class="paragraph">
+<p><em>No body</em><br>
+<strong>Path Param</strong>: <code>id</code>, <code>java.lang.String</code><br>
+<strong>Query Param</strong>: <code>format</code>, <code>java.lang.String</code><br>
+<strong>Query Param</strong>: <code>language</code>, <code>java.lang.String</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_13"><a class="anchor" href="#_response_13"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code_13"><a class="anchor" href="#_code_200_ok_code_13"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>org.talend.sdk.component.server.front.model.DocumentationContent</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "source": "string",
+    "type": "string"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_get_api_v1_environment_code"><a class="anchor" href="#_code_get_api_v1_environment_code"></a><code>GET api/v1/environment</code></h4>
+<div class="paragraph">
+<p>Returns the environment of this instance. Useful to check the version or configure a healthcheck for the server.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_14"><a class="anchor" href="#_request_14"></a>Request</h5>
+<div class="paragraph">
+<p><em>No body</em><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_14"><a class="anchor" href="#_response_14"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>*/*</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_200_ok_code_14"><a class="anchor" href="#_code_200_ok_code_14"></a><code>200 OK</code></h6>
+<div class="paragraph">
+<p><strong>Response Body</strong>: (<code>org.talend.sdk.component.server.front.model.Environment</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+    "commit": "string",
+    "latestApiVersion": 0,
+    "time": "string",
+    "version": "string"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_post_api_v1_execution_read_family_component_code"><a class="anchor" href="#_code_post_api_v1_execution_read_family_component_code"></a><code>POST api/v1/execution/read/{family}/{component}</code></h4>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+deprecated
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Read inputs from an instance of mapper. The number of returned records if enforced to be limited to 1000.
+The format is a JSON based format where each like is a json record.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_15"><a class="anchor" href="#_request_15"></a>Request</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code><br>
+<strong>Request Body</strong>: (<code>java.util.Map&lt;java.lang.String, java.lang.String&gt;</code>)
+<strong>Path Param</strong>: <code>component</code>, <code>java.lang.String</code><br>
+<strong>Path Param</strong>: <code>family</code>, <code>java.lang.String</code><br>
+<strong>Query Param</strong>: <code>size</code>, <code>long</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_15"><a class="anchor" href="#_response_15"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>talend/stream</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_204_no_content_code"><a class="anchor" href="#_code_204_no_content_code"></a><code>204 No Content</code></h6>
+
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_code_post_api_v1_execution_write_family_component_code"><a class="anchor" href="#_code_post_api_v1_execution_write_family_component_code"></a><code>POST api/v1/execution/write/{family}/{component}</code></h4>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+deprecated
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Sends records using a processor instance. Note that the processor should have only an input.
+Behavior for other processors is undefined.
+The input format is a JSON based format where each like is a json record - same as for the symmetric endpoint.</p>
+</div>
+<div class="sect4">
+<h5 id="_request_16"><a class="anchor" href="#_request_16"></a>Request</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>talend/stream</code><br>
+<strong>Request Body</strong>: (<code>java.io.InputStream</code>)
+<strong>Path Param</strong>: <code>component</code>, <code>java.lang.String</code><br>
+<strong>Path Param</strong>: <code>family</code>, <code>java.lang.String</code><br>
+<strong>Query Param</strong>: <code>group-size</code>, <code>long</code><br></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_response_16"><a class="anchor" href="#_response_16"></a>Response</h5>
+<div class="paragraph">
+<p><strong>Content-Type</strong>: <code>application/json</code></p>
+</div>
+<div class="sect5">
+<h6 id="_code_204_no_content_code_2"><a class="anchor" href="#_code_204_no_content_code_2"></a><code>204 No Content</code></h6>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+to ensure the migration can be activated you need to set in the execution configuration you send to the server
+the version it was created with (component version, it is in component detail endpoint) with the key <code>tcomp::component::version</code>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deprecated_endpoints"><a class="anchor" href="#_deprecated_endpoints"></a>Deprecated endpoints</h3>
+<div class="paragraph">
+<p>If some endpoints are intended to disappear they will be deprecated. In practise it means a header <code>X-Talend-Warning</code>
+will be returned with some message as value.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_websocket_transport"><a class="anchor" href="#_websocket_transport"></a>WebSocket transport</h3>
+<div class="paragraph">
+<p>You can connect on any endpoint replacing <code>/api</code> by <code>/websocket</code> and appending <code>/&lt;http method&gt;</code> for the URL and formatting the request as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>SEND
+destination: &lt;endpoint after v1&gt;
+&lt;headers&gt;
+
+&lt;payload&gt;^@</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For instance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>SEND
+destination: /component/index
+Accept: application/json
+
+^@</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The response is formatted as follow:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>MESSAGE
+status: &lt;http status code&gt;
+&lt;headers&gt;
+
+&lt;payload&gt;^@</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+if you have a doubt about the endpoint, they are all logged during startup and you can find them in the logs.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t want to create a pool of connection per endpoint/verb you can use the bus endpoint: <code>/websocket/v1/bus</code>.
+This endpoint requires that you add the header <code>destinationMethod</code> to each request with the verb value - default would be <code>GET</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>SEND
+destination: /component/index
+destinationMethod: GET
+Accept: application/json
+
+^@</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_https_activation"><a class="anchor" href="#_https_activation"></a>HTTPS activation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using the server zip (or <a href="https://github.com/Talend/component-runtime/blob/master/.docker/Dockerfile">Docker image</a>)
+you can configure HTTPS adding properties to <code>MEECROWAVE_OPTS</code>. Assuming you have a certificate in <code>/opt/certificates/component.p12</code>
+(don&#8217;t forget to add/mount it in the Docker image if you use it) you can activate it through:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sh hljs" data-lang="sh"># use -e for Docker
+#
+# this will skip the http port binding to only bind https on the port 8443 and setup the right certificate
+export MEECROWAVE_OPTS="-Dskip-http=true -Dssl=true -Dhttps=8443 -Dkeystore-type=PKCS12 -Dkeystore-alias=talend -Dkeystore-password=talend -Dkeystore-file=/opt/certificates/component.p12"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_web_forms_and_rest_api"><a class="anchor" href="#_web_forms_and_rest_api"></a>Web forms and REST API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>component-form</code> library provides a way to build a component REST API facade compatible with react form library.</p>
+</div>
+<div class="paragraph">
+<p>A trivial facade can be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Path("tacokit-facade")
+@ApplicationScoped
+public class ComponentFacade {
+    private static final String[] EMPTY_ARRAY = new String[0];
+
+    @Inject
+    private Client client;
+
+    @Inject
+    private ActionService actionService;
+
+    @Inject
+    private UiSpecService uiSpecService;
+
+    @Inject // assuming it is available in your app, use any client you want
+    private WebTarget target;
+
+    @POST
+    @Path("action")
+    public void action(@Suspended final AsyncResponse response, @QueryParam("family") final String family,
+            @QueryParam("type") final String type, @QueryParam("action") final String action,
+            final Map&lt;String, Object&gt; params) {
+        client.action(family, type, action, params).handle((r, e) -&gt; {
+            if (e != null) {
+                onException(response, e);
+            } else {
+                response.resume(actionService.map(type, r));
+            }
+            return null;
+        });
+    }
+
+    @GET
+    @Path("index")
+    public void getIndex(@Suspended final AsyncResponse response,
+            @QueryParam("language") @DefaultValue("en") final String language) {
+        target
+                .path("component/index")
+                .queryParam("language", language)
+                .request(APPLICATION_JSON_TYPE)
+                .rx()
+                .get(ComponentIndices.class)
+                .toCompletableFuture()
+                .handle((index, e) -&gt; {
+            if (e != null) {
+                onException(response, e);
+            } else {
+                index.getComponents().stream().flatMap(c -&gt; c.getLinks().stream()).forEach(
+                        link -&gt; link.setPath(link.getPath().replaceFirst("/component/", "/application/").replace(
+                                "/details?identifiers=", "/detail/")));
+                response.resume(index);
+            }
+            return null;
+        });
+    }
+
+    @GET
+    @Path("detail/{id}")
+    public void getDetail(@Suspended final AsyncResponse response,
+            @QueryParam("language") @DefaultValue("en") final String language, @PathParam("id") final String id) {
+        target
+                .path("component/details")
+                .queryParam("language", language)
+                .queryParam("identifiers", id)
+                .request(APPLICATION_JSON_TYPE)
+                .rx()
+                .get(ComponentDetailList.class)
+                .toCompletableFuture()
+                .thenCompose(result -&gt; uiSpecService.convert(result.getDetails().iterator().next()))
+                .handle((result, e) -&gt; {
+                    if (e != null) {
+                        onException(response, e);
+                    } else {
+                        response.resume(result);
+                    }
+                    return null;
+                });
+    }
+
+    private void onException(final AsyncResponse response, final Throwable e) {
+        final UiActionResult payload;
+        final int status;
+        if (WebException.class.isInstance(e)) {
+            final WebException we = WebException.class.cast(e);
+            status = we.getStatus();
+            payload = actionService.map(we);
+        } else if (CompletionException.class.isInstance(e)) {
+            final CompletionException actualException = CompletionException.class.cast(e);
+            log.error(actualException.getMessage(), actualException);
+            status = Response.Status.BAD_GATEWAY.getStatusCode();
+            payload = actionService.map(new WebException(actualException, -1, emptyMap()));
+        } else {
+            log.error(e.getMessage(), e);
+            status = Response.Status.BAD_GATEWAY.getStatusCode();
+            payload = actionService.map(new WebException(e, -1, emptyMap()));
+        }
+        response.resume(new WebApplicationException(Response.status(status).entity(payload).build()));
+    }
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+the <code>Client</code> can be created using <code>ClientFactory.createDefault(System.getProperty("app.components.base", "http://localhost:8080/api/v1"))</code>
+and the service can be a simple <code>new UiSpecService()</code>. The factory uses JAX-RS if the API is available (assuming a JSON-B provider is registered) otherwise it tries to use Spring.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>All the conversion between component model (REST API) and uiSpec model is done through the <code>UiSpecService</code>. It is based on the object model
+which will be mapped to a ui model. The advantage to have a flat model in the component REST API is to make these layers easy to customize.</p>
+</div>
+<div class="paragraph">
+<p>You can completely control the available components, tune the rendering switching the <code>uiSchema</code> if desired or add/remove part of the form.
+You can also add custom actions/buttons for specific needs of the application.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+the  <code>/migrate</code> endpoint has nothing special so was not shown in previous snippet but if you need it you must add it as well.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_use_uispec_model_without_all_the_tooling"><a class="anchor" href="#_use_uispec_model_without_all_the_tooling"></a>Use UiSpec model without all the tooling</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.talend.sdk.component&lt;/groupId&gt;
+  &lt;artifactId&gt;component-form-model&lt;/artifactId&gt;
+  &lt;version&gt;${talend-component-kit.version}&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This maven dependency provides the UISpec model classes. You can use the <code>Ui</code> API (with or without the builders)
+to create UiSpec representations.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">final Ui form1 = ui()
+    // (1)
+    .withJsonSchema(JsonSchema.jsonSchemaFrom(Form1.class).build())
+    // (2)
+    .withUiSchema(uiSchema()
+        .withKey("multiSelectTag")
+        .withRestricted(false)
+        .withTitle("Simple multiSelectTag")
+        .withDescription("This datalist accepts values that are not in the list of suggestions")
+        .withWidget("multiSelectTag")
+        .build())
+    // (3)
+    .withProperties(myFormInstance)
+    .build();
+
+// (4)
+final String json = jsonb.toJson(form1);</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>We extract the <code>JsonSchema</code> from reflection on the class <code>Form1</code>. Note that <code>@JsonSchemaIgnore</code> allows
+to ignore a field and <code>@JsonSchemaProperty</code> allows to rename a property,</p>
+</li>
+<li>
+<p>We build programmatically using the builder API a <code>UiSchema</code>,</p>
+</li>
+<li>
+<p>We pass an instance of the form to let the serializer extracts it JSON model,</p>
+</li>
+<li>
+<p>We serialize the <code>Ui</code> model which can be used by UiSpec compatible front widgets.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+the model uses JSON-B API to define the binding, ensure to have an implementation in your classpath.
+This can be done adding these dependencies:
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.geronimo.specs&lt;/groupId&gt;
+  &lt;artifactId&gt;geronimo-jsonb_1.0_spec&lt;/artifactId&gt;
+  &lt;version&gt;1.0&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.geronimo.specs&lt;/groupId&gt;
+  &lt;artifactId&gt;geronimo-json_1.1_spec&lt;/artifactId&gt;
+  &lt;version&gt;1.0&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.johnzon&lt;/groupId&gt;
+  &lt;artifactId&gt;johnzon-jsonb&lt;/artifactId&gt;
+  &lt;version&gt;${johnzon.version}&lt;/version&gt; &lt;!-- 1.1.5 for instance --&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_javascript_integration"><a class="anchor" href="#_javascript_integration"></a>Javascript integration</h3>
+<div class="paragraph">
+<p>Default javascript integration goes through <a href="https://github.com/Talend/ui/tree/master/packages/forms">Talend UI Forms</a> library.</p>
+</div>
+<div class="paragraph">
+<p>It is bundled as a NPM module called  <code>component-kit.js</code>. It provides a default trigger implementation for the <code>UIForm</code>.</p>
+</div>
+<div class="paragraph">
+<p>Here is how to use it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">import React from 'react';
+import UIForm from '@talend/react-forms/lib/UIForm/UIForm.container';
+import TalendComponentKitTrigger from 'component-kit.js';
+
+export default class ComponentKitForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.trigger = new TalendComponentKitTrigger({ url: '/api/to/component/server/proxy' });
+    this.onTrigger = this.onTrigger.bind(this);
+    // ...
+  }
+
+  onTrigger(event, payload) {
+    return this.trigger.onDefaultTrigger(event, payload);
+  }
+
+  // ...
+
+  render() {
+    if(! this.state.uiSpec) {
+      return (&lt;div&gt;Loading ...&lt;/div&gt;);
+    }
+
+    return (
+        &lt;UIForm
+          data={this.state.uiSpec}
+          onTrigger={this.onTrigger}
+          onSubmit={this.onSubmit}
+        /&gt;
+    );
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_logging"><a class="anchor" href="#_logging"></a>Logging</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The logging uses Log4j2, you can specify a custom configuration using the system property <code>-Dlog4j.configurationFile</code>
+or adding a <code>log4j2.xml</code> file into the classpath.</p>
+</div>
+<div class="paragraph">
+<p>Here are some common configurations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Console logging:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;Configuration status="INFO"&gt;
+  &lt;Appenders&gt;
+    &lt;Console name="Console" target="SYSTEM_OUT"&gt;
+      &lt;PatternLayout pattern="[%d{HH:mm:ss.SSS}][%highlight{%-5level}][%15.15t][%30.30logger] %msg%n"/&gt;
+    &lt;/Console&gt;
+  &lt;/Appenders&gt;
+  &lt;Loggers&gt;
+    &lt;Root level="INFO"&gt;
+      &lt;AppenderRef ref="Console"/&gt;
+    &lt;/Root&gt;
+  &lt;/Loggers&gt;
+&lt;/Configuration&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This outputs messages looking like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>[16:59:58.198][INFO ][           main][oyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-34763"]</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>JSON logging:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;Configuration status="INFO"&gt;
+  &lt;Properties&gt;
+    &lt;!-- DO NOT PUT logSource there, it is useless and slow --&gt;
+    &lt;Property name="jsonLayout"&gt;{"severity":"%level","logMessage":"%encode{%message}{JSON}","logTimestamp":"%d{ISO8601}{UTC}","eventUUID":"%uuid{RANDOM}","@version":"1","logger.name":"%encode{%logger}{JSON}","host.name":"${hostName}","threadName":"%encode{%thread}{JSON}","stackTrace":"%encode{%xThrowable{full}}{JSON}"}%n&lt;/Property&gt;
+  &lt;/Properties&gt;
+  &lt;Appenders&gt;
+    &lt;Console name="Console" target="SYSTEM_OUT"&gt;
+      &lt;PatternLayout pattern="${jsonLayout}"/&gt;
+    &lt;/Console&gt;
+  &lt;/Appenders&gt;
+  &lt;Loggers&gt;
+    &lt;Root level="INFO"&gt;
+      &lt;AppenderRef ref="Console"/&gt;
+    &lt;/Root&gt;
+  &lt;/Loggers&gt;
+&lt;/Configuration&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Output messages look like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>{"severity":"INFO","logMessage":"Initializing ProtocolHandler [\"http-nio-46421\"]","logTimestamp":"2017-11-20T16:04:01,763","eventUUID":"8b998e17-7045-461c-8acb-c43f21d995ff","@version":"1","logger.name":"org.apache.coyote.http11.Http11NioProtocol","host.name":"TLND-RMANNIBUCAU","threadName":"main","stackTrace":""}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rolling file appender</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;Configuration status="INFO"&gt;
+  &lt;Appenders&gt;
+    &lt;RollingRandomAccessFile name="File" fileName="${LOG_PATH}/application.log" filePattern="${LOG_PATH}/application-%d{yyyy-MM-dd}.log"&gt;
+      &lt;PatternLayout pattern="[%d{HH:mm:ss.SSS}][%highlight{%-5level}][%15.15t][%30.30logger] %msg%n"/&gt;
+      &lt;Policies&gt;
+        &lt;SizeBasedTriggeringPolicy size="100 MB" /&gt;
+        &lt;TimeBasedTriggeringPolicy interval="1" modulate="true"/&gt;
+      &lt;/Policies&gt;
+    &lt;/RollingRandomAccessFile&gt;
+  &lt;/Appenders&gt;
+  &lt;Loggers&gt;
+    &lt;Root level="INFO"&gt;
+      &lt;AppenderRef ref="File"/&gt;
+    &lt;/Root&gt;
+  &lt;/Loggers&gt;
+&lt;/Configuration&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>More details are available on <a href="https://logging.apache.org/log4j/2.x/manual/appenders.html#RollingFileAppender">RollingFileAppender</a> documentation.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+of course you can compose previous layout (message format) and appenders (where logs are written).
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_server_configuration"><a class="anchor" href="#_server_configuration"></a>Server Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The server module contains several configuration you can set in:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Environment variables</p>
+</li>
+<li>
+<p>System properties</p>
+</li>
+<li>
+<p>A file located based on the <code>--component-configuration</code> CLI option</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+the configuration is read from system properties, environment variables, &#8230;&#8203;.
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all table-striped table-hover table-ordered">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Key</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.component.coordinates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A comma separated list of gav to locate the components</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.component.extend.dependencies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Should the component extensions add required dependencies.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.component.registry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A property file where the value is a gav of a component to register (complementary with <code>coordinates</code>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.documentation.active</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Should the /documentation endpoint be activated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.execution.dataset.retriever.timeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">How long the read execution endpoint can last (max)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">180</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.execution.pool.size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The size of the execution pool for runtime endpoints.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.execution.pool.wait</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">How long the application waits during shutdown for the execution tasks to complete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PT10S</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.jaxrs.exceptionhandler.defaultMessage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If set it will replace any message for exceptions. Set to <code>false</code> to use the actual exception message.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.maven.repository</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The local maven repository used to locate components and their dependencies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.monitoring.brave.reporter.async</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When using url or kafka reporter, you can configure the async reporter with properties passed to this configuration entry.Ex: <code>messageTimeout=5000,closeTimeout=5000</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">console</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.monitoring.brave.reporter.type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The brave reporter to use to send the spans. Supported values are [auto, console, noop, url]. When configuration is needed,you can use this syntax to configure the repoter if needed: <code>&lt;name&gt;(config1=value1, config2=value2)</code>, for example: <code>url(endpoint=http://brave.company.com</code>.</p>
+<p class="tableblock">In <code>auto</code> mode, if environment variable <code>TRACING_ON</code> doesn&#8217;t exist or is set to <code>false</code>, <code>noop</code> will be selected, and is set to <code>true</code>, <code>TRACING_KAFKA_URL</code>, <code>TRACING_KAFKA_TOPIC</code> and <code>TRACING_SAMPLING_RATE</code> will configure <code>kafka</code> reporter..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">auto</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.monitoring.brave.sampling.action.rate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The accuracy rate of the sampling for action endpoints.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.monitoring.brave.sampling.component.rate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The accuracy rate of the sampling for component endpoints.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.monitoring.brave.sampling.configurationtype.rate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The accuracy rate of the sampling for environment endpoints.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.monitoring.brave.sampling.documentation.rate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The accuracy rate of the sampling for documentation endpoint.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.monitoring.brave.sampling.environment.rate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The accuracy rate of the sampling for environment endpoints.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.monitoring.brave.sampling.execution.rate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The accuracy rate of the sampling for execution endpoints.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.monitoring.brave.sampling.rate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The accuracy rate of the sampling.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-1.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.monitoring.brave.service.name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name used by the brave integration (zipkin)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">component-server</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.security.command.handler</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">How to validate a command/request. Accepted values: securityNoopHandler.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">securityNoopHandler</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">talend.component.server.security.connection.handler</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">How to validate a connection. Accepted values: securityNoopHandler.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">securityNoopHandler</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+            </div>
+          </div>
+          <div class="col-sm-3 container article-side-panel">
+            <nav class="article-anchors">
+              <div class="article-side-actions">
+
+                <ul>
+                    <li>
+                      <a class="article-side-actions-link" target="_blank" href="https://github.com/Talend/component-runtime/blob/component-runtime-0.0.10/documentation/src/main/antora/modules/ROOT/pages/documentation-rest.adoc">
+                        <i class="fa fa-edit"></i> &nbsp; &nbsp; Suggest an edit
+                      </a>
+                    </li>
+
+                    <li>
+                                <a class="article-side-actions-link" target="_blank"
+                                   href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Ftalend.github.io%2Fcomponent-runtime%2Fmain%2F1.1.0%2Fdocumentation-rest.html&text=Talend%20Component%20Kit%20%3E%3E%20Talend%20Component%20REST%20API%20Documentation%20%3E%3E%20&tw_p=tweetbutton&url=https%3A%2F%2Ftalend.github.io%2Fcomponent-runtime%2Fmain%2F1.1.0%2Fdocumentation-rest.html">
+                                    <i class="fab fa-twitter"></i> &nbsp; &nbsp; Tweet
+                                </a>
+                            </li>
+                            <li>
+                                <a class="article-side-actions-link"
+                                   href="mailto:?subject=Talend%20Component%20Kit%3A%20Talend%20Component%20REST%20API%20Documentation&body=Talend%20Component%20Kit%3A%20Talend%20Component%20REST%20API%20Documentation%0A%0Ahttps%3A%2F%2Ftalend.github.io%2Fcomponent-runtime%2Fmain%2F1.1.0%2Fdocumentation-rest.html">
+                                    <i class="far fa-envelope"></i> &nbsp; &nbsp; Mail
+                                </a>
+                            </li>
+
+                </ul>
+              </div>
+              <h1 class="article-side-toc">In this article</h1>
+            </nav>
+          </div>
+          <a href="#top" class="top">Scroll to top</a>
+        </div>
+        <script>(window.talend = (window.talend || {})).article = true;</script>
+    </article>
+              </div>
+            </main>
+      </main>
+      <footer class="footer ">
+    <div class="footer-with-copyright footer-with-links">
+        <ul class="footer-links pull-left">
+            <li><a class="gwt-Anchor" href="http://www.talend.com/">Talend</a></li>
+            <li><a class="gwt-Anchor" href="http://www.talend.com/contact">Contact</a></li>
+            <li><a class="gwt-Anchor" href="http://www.talend.com/legal-terms/us-eula">Talend EULA</a></li>
+        </ul>
+        <div class="footer-copyright pull-right" style="">&copy; 2018 Talend Inc. All rights reserved.</div>
+    </div>
+</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+<script src="https://cdn.rawgit.com/rmannibucau/00206484a54ac569e091513e6d2a1c01/raw/46cd5d77ba1abe678f83d11490e12a327b62d7ee/anchorific.js"></script>
+<script src="../../_/js/talend.js"></script>
+  </body>
+</html>
