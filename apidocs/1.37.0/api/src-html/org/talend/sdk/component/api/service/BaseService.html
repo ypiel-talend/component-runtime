@@ -29,25 +29,27 @@
 <span class="sourceLineNo">020</span><a id="line.20"></a>
 <span class="sourceLineNo">021</span><a id="line.21">import org.talend.sdk.component.api.service.serialization.Serial;</a>
 <span class="sourceLineNo">022</span><a id="line.22"></a>
-<span class="sourceLineNo">023</span><a id="line.23">import lombok.Data;</a>
-<span class="sourceLineNo">024</span><a id="line.24"></a>
-<span class="sourceLineNo">025</span><a id="line.25">/**</a>
-<span class="sourceLineNo">026</span><a id="line.26"> * Classe base for services to be declared Serializable and use Component Manager serialization system.</a>
-<span class="sourceLineNo">027</span><a id="line.27"> */</a>
-<span class="sourceLineNo">028</span><a id="line.28">@Data</a>
+<span class="sourceLineNo">023</span><a id="line.23">import lombok.Getter;</a>
+<span class="sourceLineNo">024</span><a id="line.24">import lombok.Setter;</a>
+<span class="sourceLineNo">025</span><a id="line.25"></a>
+<span class="sourceLineNo">026</span><a id="line.26">/**</a>
+<span class="sourceLineNo">027</span><a id="line.27"> * Classe base for services to be declared Serializable and use Component Manager serialization system.</a>
+<span class="sourceLineNo">028</span><a id="line.28"> */</a>
 <span class="sourceLineNo">029</span><a id="line.29">public class BaseService implements Serializable {</a>
 <span class="sourceLineNo">030</span><a id="line.30"></a>
 <span class="sourceLineNo">031</span><a id="line.31">    private static final long serialVersionUID = -5486791400889992135L;</a>
 <span class="sourceLineNo">032</span><a id="line.32"></a>
-<span class="sourceLineNo">033</span><a id="line.33">    private Serial serializationHelper;</a>
-<span class="sourceLineNo">034</span><a id="line.34"></a>
-<span class="sourceLineNo">035</span><a id="line.35">    protected final Object writeReplace() throws ObjectStreamException {</a>
-<span class="sourceLineNo">036</span><a id="line.36">        if (this.serializationHelper != null) {</a>
-<span class="sourceLineNo">037</span><a id="line.37">            return this.serializationHelper;</a>
-<span class="sourceLineNo">038</span><a id="line.38">        }</a>
-<span class="sourceLineNo">039</span><a id="line.39">        throw new IllegalArgumentException("Serialization not found for " + this.getClass().getName());</a>
-<span class="sourceLineNo">040</span><a id="line.40">    }</a>
-<span class="sourceLineNo">041</span><a id="line.41">}</a>
+<span class="sourceLineNo">033</span><a id="line.33">    @Getter</a>
+<span class="sourceLineNo">034</span><a id="line.34">    @Setter</a>
+<span class="sourceLineNo">035</span><a id="line.35">    private Serial serializationHelper;</a>
+<span class="sourceLineNo">036</span><a id="line.36"></a>
+<span class="sourceLineNo">037</span><a id="line.37">    protected final Object writeReplace() throws ObjectStreamException {</a>
+<span class="sourceLineNo">038</span><a id="line.38">        if (this.serializationHelper != null) {</a>
+<span class="sourceLineNo">039</span><a id="line.39">            return this.serializationHelper;</a>
+<span class="sourceLineNo">040</span><a id="line.40">        }</a>
+<span class="sourceLineNo">041</span><a id="line.41">        throw new IllegalArgumentException("Serialization not found for " + this.getClass().getName());</a>
+<span class="sourceLineNo">042</span><a id="line.42">    }</a>
+<span class="sourceLineNo">043</span><a id="line.43">}</a>
 
 
 
