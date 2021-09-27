@@ -11,7 +11,7 @@
     <title>Talend Component Kit Reference guide :: Talend Component Kit Developer Reference Guide</title>
     <link rel="canonical" href="https://talend.github.io/component-runtime/main/1.38.0/index-reference-guide.html">
     <meta name="generator" content="Antora 2.2.0">
-<meta name="date" content="2021-09-26T11:26:00.284Z" scheme="YYYY-MM-DDTHH:mm:ss.sssZ">
+<meta name="date" content="2021-09-27T13:08:34.863Z" scheme="YYYY-MM-DDTHH:mm:ss.sssZ">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/idea.min.css" integrity="sha256-rD61BPsgKHzJPyg7vpXaYOw6tMYuY2fz1p9033NYeM8=" crossorigin="anonymous" />
@@ -2309,6 +2309,22 @@ de*=de</code>. For caching reasons the goal is to reduce the locales to the mini
 <dt class="hdlist1">talend.component.server.maven.repository</dt>
 <dd>
 <p>The local maven repository used to locate components and their dependencies</p>
+</dd>
+<dt class="hdlist1">talend.component.server.plugins.reloading.active</dt>
+<dd>
+<p>Default value: <code>false</code>. Should the plugins be un-deployed and re-deployed.</p>
+</dd>
+<dt class="hdlist1">talend.component.server.plugins.reloading.interval</dt>
+<dd>
+<p>Default value: <code>600</code>. Interval in seconds between each check if plugins re-loading is enabled.</p>
+</dd>
+<dt class="hdlist1">talend.component.server.plugins.reloading.marker</dt>
+<dd>
+<p>If plugins discovery is done via file resolution through m2 and re-loading use timestamp.</p>
+</dd>
+<dt class="hdlist1">talend.component.server.plugins.reloading.timestamp</dt>
+<dd>
+<p>Default value: <code>true</code>. Do we re-deploy on a timestamp change or connectors version change.</p>
 </dd>
 <dt class="hdlist1">talend.component.server.request.log</dt>
 <dd>
