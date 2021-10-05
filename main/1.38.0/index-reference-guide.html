@@ -11,7 +11,7 @@
     <title>Talend Component Kit Reference guide :: Talend Component Kit Developer Reference Guide</title>
     <link rel="canonical" href="https://talend.github.io/component-runtime/main/1.38.0/index-reference-guide.html">
     <meta name="generator" content="Antora 2.2.0">
-<meta name="date" content="2021-10-04T15:56:56.707Z" scheme="YYYY-MM-DDTHH:mm:ss.sssZ">
+<meta name="date" content="2021-10-05T09:07:41.600Z" scheme="YYYY-MM-DDTHH:mm:ss.sssZ">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/idea.min.css" integrity="sha256-rD61BPsgKHzJPyg7vpXaYOw6tMYuY2fz1p9033NYeM8=" crossorigin="anonymous" />
@@ -2322,9 +2322,9 @@ de*=de</code>. For caching reasons the goal is to reduce the locales to the mini
 <dd>
 <p>Specify a file to check its timestamp on the filesystem. This file will take precedence of the default ones provided by the <code>talend.component.server.component.registry</code> property (used for timestamp method).</p>
 </dd>
-<dt class="hdlist1">talend.component.server.plugins.reloading.timestamp</dt>
+<dt class="hdlist1">talend.component.server.plugins.reloading.method</dt>
 <dd>
-<p>Default value: <code>true</code>. Do we re-deploy on a timestamp change or connectors version change. By default, the timestamp is checked otherwise we inspect the content of the <code>CONNECTORS_VERSION</code> file.</p>
+<p>Default value: <code>timestamp</code>. Re-deploy method on a <code>timestamp</code> or <code>connectors</code> version change. By default, the timestamp is checked on the file pointed by <code>talend.component.server.component.registry</code> or <code>talend.component.server.plugins.reloading.marker</code> variable, otherwise we inspect the content of the <code>CONNECTORS_VERSION</code> file. Accepted values: <code>timestamp</code>, anything else defaults to <code>connectors</code>.</p>
 </dd>
 <dt class="hdlist1">talend.component.server.request.log</dt>
 <dd>
