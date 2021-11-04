@@ -465,39 +465,40 @@
 <span class="sourceLineNo">456</span><a id="line.456">            final Supplier&lt;Stream&lt;Schema.Entry&gt;&gt; allEntriesSupplier, final BiConsumer&lt;String, Entry&gt; replaceFunction) {</a>
 <span class="sourceLineNo">457</span><a id="line.457">        final Optional&lt;Entry&gt; collisionedEntry = allEntriesSupplier //</a>
 <span class="sourceLineNo">458</span><a id="line.458">                .get() //</a>
-<span class="sourceLineNo">459</span><a id="line.459">                .filter((final Entry field) -&gt; field.getName().equals(newEntry.getName())) //</a>
-<span class="sourceLineNo">460</span><a id="line.460">                .findFirst();</a>
-<span class="sourceLineNo">461</span><a id="line.461">        if (!collisionedEntry.isPresent()) {</a>
-<span class="sourceLineNo">462</span><a id="line.462">            // No collision, return new entry.</a>
-<span class="sourceLineNo">463</span><a id="line.463">            return newEntry;</a>
-<span class="sourceLineNo">464</span><a id="line.464">        }</a>
-<span class="sourceLineNo">465</span><a id="line.465">        final Entry matchedEntry = collisionedEntry.get();</a>
-<span class="sourceLineNo">466</span><a id="line.466">        final boolean matchedToChange = matchedEntry.getRawName() != null &amp;&amp; !(matchedEntry.getRawName().isEmpty());</a>
-<span class="sourceLineNo">467</span><a id="line.467">        if (matchedToChange) {</a>
-<span class="sourceLineNo">468</span><a id="line.468">            // the rename has to be applied on entry already inside schema, so replace.</a>
-<span class="sourceLineNo">469</span><a id="line.469">            replaceFunction.accept(matchedEntry.getName(), newEntry);</a>
-<span class="sourceLineNo">470</span><a id="line.470">        } else if (newEntry.getRawName() == null || newEntry.getRawName().isEmpty()) {</a>
-<span class="sourceLineNo">471</span><a id="line.471">            // try to add exactly same raw, skip the add here.</a>
-<span class="sourceLineNo">472</span><a id="line.472">            return null;</a>
-<span class="sourceLineNo">473</span><a id="line.473">        }</a>
-<span class="sourceLineNo">474</span><a id="line.474">        final Entry fieldToChange = matchedToChange ? matchedEntry : newEntry;</a>
-<span class="sourceLineNo">475</span><a id="line.475">        int indexForAnticollision = 1;</a>
-<span class="sourceLineNo">476</span><a id="line.476">        final String baseName = Schema.sanitizeConnectionName(fieldToChange.rawName); // recalc primiti name.</a>
-<span class="sourceLineNo">477</span><a id="line.477"></a>
-<span class="sourceLineNo">478</span><a id="line.478">        String newName = baseName + "_" + indexForAnticollision;</a>
-<span class="sourceLineNo">479</span><a id="line.479">        final Set&lt;String&gt; existingNames = allEntriesSupplier //</a>
-<span class="sourceLineNo">480</span><a id="line.480">                .get() //</a>
-<span class="sourceLineNo">481</span><a id="line.481">                .map(Entry::getName) //</a>
-<span class="sourceLineNo">482</span><a id="line.482">                .collect(Collectors.toSet());</a>
-<span class="sourceLineNo">483</span><a id="line.483">        while (existingNames.contains(newName)) {</a>
-<span class="sourceLineNo">484</span><a id="line.484">            indexForAnticollision++;</a>
-<span class="sourceLineNo">485</span><a id="line.485">            newName = baseName + "_" + indexForAnticollision;</a>
-<span class="sourceLineNo">486</span><a id="line.486">        }</a>
-<span class="sourceLineNo">487</span><a id="line.487">        final Entry newFieldToAdd = fieldToChange.toBuilder().withName(newName).build();</a>
-<span class="sourceLineNo">488</span><a id="line.488"></a>
-<span class="sourceLineNo">489</span><a id="line.489">        return newFieldToAdd; // matchedToChange ? newFieldToAdd : newEntry;</a>
-<span class="sourceLineNo">490</span><a id="line.490">    }</a>
-<span class="sourceLineNo">491</span><a id="line.491">}</a>
+<span class="sourceLineNo">459</span><a id="line.459">                .filter((final Entry field) -&gt; field.getName().equals(newEntry.getName())</a>
+<span class="sourceLineNo">460</span><a id="line.460">                        &amp;&amp; !Objects.equals(field, newEntry)) //</a>
+<span class="sourceLineNo">461</span><a id="line.461">                .findFirst();</a>
+<span class="sourceLineNo">462</span><a id="line.462">        if (!collisionedEntry.isPresent()) {</a>
+<span class="sourceLineNo">463</span><a id="line.463">            // No collision, return new entry.</a>
+<span class="sourceLineNo">464</span><a id="line.464">            return newEntry;</a>
+<span class="sourceLineNo">465</span><a id="line.465">        }</a>
+<span class="sourceLineNo">466</span><a id="line.466">        final Entry matchedEntry = collisionedEntry.get();</a>
+<span class="sourceLineNo">467</span><a id="line.467">        final boolean matchedToChange = matchedEntry.getRawName() != null &amp;&amp; !(matchedEntry.getRawName().isEmpty());</a>
+<span class="sourceLineNo">468</span><a id="line.468">        if (matchedToChange) {</a>
+<span class="sourceLineNo">469</span><a id="line.469">            // the rename has to be applied on entry already inside schema, so replace.</a>
+<span class="sourceLineNo">470</span><a id="line.470">            replaceFunction.accept(matchedEntry.getName(), newEntry);</a>
+<span class="sourceLineNo">471</span><a id="line.471">        } else if (newEntry.getRawName() == null || newEntry.getRawName().isEmpty()) {</a>
+<span class="sourceLineNo">472</span><a id="line.472">            // try to add exactly same raw, skip the add here.</a>
+<span class="sourceLineNo">473</span><a id="line.473">            return null;</a>
+<span class="sourceLineNo">474</span><a id="line.474">        }</a>
+<span class="sourceLineNo">475</span><a id="line.475">        final Entry fieldToChange = matchedToChange ? matchedEntry : newEntry;</a>
+<span class="sourceLineNo">476</span><a id="line.476">        int indexForAnticollision = 1;</a>
+<span class="sourceLineNo">477</span><a id="line.477">        final String baseName = Schema.sanitizeConnectionName(fieldToChange.rawName); // recalc primiti name.</a>
+<span class="sourceLineNo">478</span><a id="line.478"></a>
+<span class="sourceLineNo">479</span><a id="line.479">        String newName = baseName + "_" + indexForAnticollision;</a>
+<span class="sourceLineNo">480</span><a id="line.480">        final Set&lt;String&gt; existingNames = allEntriesSupplier //</a>
+<span class="sourceLineNo">481</span><a id="line.481">                .get() //</a>
+<span class="sourceLineNo">482</span><a id="line.482">                .map(Entry::getName) //</a>
+<span class="sourceLineNo">483</span><a id="line.483">                .collect(Collectors.toSet());</a>
+<span class="sourceLineNo">484</span><a id="line.484">        while (existingNames.contains(newName)) {</a>
+<span class="sourceLineNo">485</span><a id="line.485">            indexForAnticollision++;</a>
+<span class="sourceLineNo">486</span><a id="line.486">            newName = baseName + "_" + indexForAnticollision;</a>
+<span class="sourceLineNo">487</span><a id="line.487">        }</a>
+<span class="sourceLineNo">488</span><a id="line.488">        final Entry newFieldToAdd = fieldToChange.toBuilder().withName(newName).build();</a>
+<span class="sourceLineNo">489</span><a id="line.489"></a>
+<span class="sourceLineNo">490</span><a id="line.490">        return newFieldToAdd; // matchedToChange ? newFieldToAdd : newEntry;</a>
+<span class="sourceLineNo">491</span><a id="line.491">    }</a>
+<span class="sourceLineNo">492</span><a id="line.492">}</a>
 
 
 
