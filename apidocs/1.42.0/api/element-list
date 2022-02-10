@@ -7,6 +7,7 @@ org.talend.sdk.component.api.configuration.condition
 org.talend.sdk.component.api.configuration.condition.meta
 org.talend.sdk.component.api.configuration.constraint
 org.talend.sdk.component.api.configuration.constraint.meta
+org.talend.sdk.component.api.configuration.dependency
 org.talend.sdk.component.api.configuration.type
 org.talend.sdk.component.api.configuration.type.meta
 org.talend.sdk.component.api.configuration.ui
