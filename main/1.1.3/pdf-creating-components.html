@@ -4,18 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talend Component Kit Developer Reference Guide :: Implementing components</title>
-    <link rel="canonical" href="https://talend.github.io/component-runtime/main/1.43.0/pdf-creating-components.html">
+    <link rel="canonical" href="https://talend.github.io/component-runtime/main/latest/pdf-creating-components.html">
     <meta name="description" content="Get an overview of the main steps to code the logic of your custom Talend Componit Kit components">
     <meta name="keywords" content="create, code, class, logic, layout, configuration, dev, overview">
     <meta name="generator" content="Talend Component Kit Generator">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Implementing components :: Talend Component Kit Developer Reference Guide</title>
-    <link rel="canonical" href="https://talend.github.io/component-runtime/main/1.43.0/pdf-creating-components.html">
+    <link rel="canonical" href="https://talend.github.io/component-runtime/main/latest/pdf-creating-components.html">
     <meta name="description" content="Get an overview of the main steps to code the logic of your custom Talend Componit Kit components">
     <meta name="keywords" content="create, code, class, logic, layout, configuration, dev, overview">
-    <meta name="generator" content="Antora 2.3.4">
-<meta name="date" content="2022-03-01T11:32:26.091Z" scheme="YYYY-MM-DDTHH:mm:ss.sssZ">
+    <meta name="generator" content="Antora 3.0.1">
+<meta name="date" content="2022-03-01T19:32:26.867Z" scheme="YYYY-MM-DDTHH:mm:ss.sssZ">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/idea.min.css" integrity="sha256-rD61BPsgKHzJPyg7vpXaYOw6tMYuY2fz1p9033NYeM8=" crossorigin="anonymous" />
@@ -92,7 +92,7 @@
           </button>
           <ul class="dropdown-menu">
                 <li class="navbar-item version">
-                    <a href="../1.43.0/index.html">1.43.0</a>
+                    <a href="../latest/index.html">1.43.0</a>
                 </li>
                 <li class="navbar-item version">
                     <a href="../1.42.0/index.html">1.42.0</a>
@@ -101,70 +101,40 @@
                     <a href="../1.41.1/index.html">1.41.1</a>
                 </li>
                 <li class="navbar-item version">
-                    <a href="../1.41.0/index.html">1.41.0</a>
+                    <a href="../1.40.0/index.html">1.40.0</a>
                 </li>
                 <li class="navbar-item version">
-                    <a href="../1.40.0/index.html">1.40.0</a>
+                    <a href="../1.39.3/index.html">1.39.3</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../1.38.5/index.html">1.38.5</a>
                 </li>
                 <li class="navbar-item version">
                     <a href="../1.37.1/index.html">1.37.1</a>
                 </li>
                 <li class="navbar-item version">
-                    <a href="../1.37.0/index.html">1.37.0</a>
-                </li>
-                <li class="navbar-item version">
                     <a href="../1.36.1/index.html">1.36.1</a>
-                </li>
-                <li class="navbar-item version">
-                    <a href="../1.36.0/index.html">1.36.0</a>
                 </li>
                 <li class="navbar-item version">
                     <a href="../1.35.1/index.html">1.35.1</a>
                 </li>
                 <li class="navbar-item version">
-                    <a href="../1.35.0/index.html">1.35.0</a>
-                </li>
-                <li class="navbar-item version">
                     <a href="../1.34.1/index.html">1.34.1</a>
-                </li>
-                <li class="navbar-item version">
-                    <a href="../1.34.0/index.html">1.34.0</a>
-                </li>
-                <li class="navbar-item version">
-                    <a href="../1.33.2/index.html">1.33.2</a>
-                </li>
-                <li class="navbar-item version">
-                    <a href="../1.33.1/index.html">1.33.1</a>
-                </li>
-                <li class="navbar-item version">
-                    <a href="../1.33.0/index.html">1.33.0</a>
                 </li>
                 <li class="navbar-item version">
                     <a href="../1.32.2/index.html">1.32.2</a>
                 </li>
                 <li class="navbar-item version">
-                    <a href="../1.32.1/index.html">1.32.1</a>
-                </li>
-                <li class="navbar-item version">
-                    <a href="../1.32.0/index.html">1.32.0</a>
-                </li>
-                <li class="navbar-item version">
                     <a href="../1.31.2/index.html">1.31.2</a>
                 </li>
                 <li class="navbar-item version">
-                    <a href="../1.31.1/index.html">1.31.1</a>
+                    <a href="../1.30.0/index.html">1.30.0</a>
                 </li>
                 <li class="navbar-item version">
-                    <a href="../1.31.0/index.html">1.31.0</a>
+                    <a href="../1.29.2/index.html">1.29.2</a>
                 </li>
                 <li class="navbar-item version">
                     <a href="../1.28.2/index.html">1.28.2</a>
-                </li>
-                <li class="navbar-item version">
-                    <a href="../1.28.1/index.html">1.28.1</a>
-                </li>
-                <li class="navbar-item version">
-                    <a href="../1.28.0/index.html">1.28.0</a>
                 </li>
                 <li class="navbar-item version">
                     <a href="../1.1.27/index.html">1.1.27</a>
@@ -262,19 +232,53 @@
                 <li class="navbar-item version">
                     <a href="../1.0.1/index.html">1.0.1</a>
                 </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.13/index.html">0.0.13</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.12/index.html">0.0.12</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.11/index.html">0.0.11</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.10/index.html">0.0.10</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.9/index.html">0.0.9</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.8/index.html">0.0.8</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.7/index.html">0.0.7</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.6/index.html">0.0.6</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.5/index.html">0.0.5</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.4/index.html">0.0.4</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.3/index.html">0.0.3</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.2/index.html">0.0.2</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../0.0.1/index.html">0.0.1</a>
+                </li>
           </ul>
         </div>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="changelog.html" class="navbar-single-link">CHANGELOG</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a class="navbar-item" href="https://talend.github.io/component-runtime/blog/release-notes.html" target="_blank">Release Notes</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a class="navbar-item" href="https://github.com/talend/component-runtime" target="_blank">GitHub Repository</a></li>
               <li><a class="navbar-item" href="contributors.html">Contributors</a></li>
@@ -597,16 +601,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="component-registering.html" class="page">Defining family and component metadata</a></p>
+<p><a href="component-registering.html" class="xref page">Defining family and component metadata</a></p>
 </li>
 <li>
-<p><a href="component-define-input.html" class="page">Defining an input component logic</a></p>
+<p><a href="component-define-input.html" class="xref page">Defining an input component logic</a></p>
 </li>
 <li>
-<p><a href="component-define-processor-output.html" class="page">Defining a processor/output logic</a></p>
+<p><a href="component-define-processor-output.html" class="xref page">Defining a processor/output logic</a></p>
 </li>
 <li>
-<p><a href="component-configuration.html" class="page">Defining component layout and configuration</a></p>
+<p><a href="component-configuration.html" class="xref page">Defining component layout and configuration</a></p>
 </li>
 </ul>
 </div>
@@ -619,41 +623,41 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="component-internationalization.html" class="page">Internationalizing a component</a></p>
+<p><a href="component-internationalization.html" class="xref page">Internationalizing a component</a></p>
 </li>
 <li>
-<p><a href="component-versions-and-migration.html" class="page">Managing component versions</a></p>
+<p><a href="component-versions-and-migration.html" class="xref page">Managing component versions</a></p>
 </li>
 <li>
-<p><a href="tutorial-configuration-sensitive-data.html" class="page">Masking sensitive data</a></p>
+<p><a href="tutorial-configuration-sensitive-data.html" class="xref page">Masking sensitive data</a></p>
 </li>
 <li>
-<p><a href="concept-processor-and-batch-processing.html" class="page">Implementing batch processing</a></p>
+<p><a href="concept-processor-and-batch-processing.html" class="xref page">Implementing batch processing</a></p>
 </li>
 <li>
-<p><a href="component-implementing-streaming.html" class="page">Implementing streaming on a component</a></p>
+<p><a href="component-implementing-streaming.html" class="xref page">Implementing streaming on a component</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>You can also make certain configurations reusable across your project by <a href="index-defining-services.html" class="page">defining services</a>.
-Using your Java IDE along with a build tool supported by the framework, you can then compile your components to <a href="index-testing-components.html" class="page">test</a> and <a href="index-deploying-components.html" class="page">deploy</a> them to Talend Studio or other Talend applications:</p>
+<p>You can also make certain configurations reusable across your project by <a href="index-defining-services.html" class="xref page">defining services</a>.
+Using your Java IDE along with a build tool supported by the framework, you can then compile your components to <a href="index-testing-components.html" class="xref page">test</a> and <a href="index-deploying-components.html" class="xref page">deploy</a> them to Talend Studio or other Talend applications:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="build-tools-maven.html" class="page">Building components with Maven</a></p>
+<p><a href="build-tools-maven.html" class="xref page">Building components with Maven</a></p>
 </li>
 <li>
-<p><a href="build-tools-gradle.html" class="page">Building components with Gradle</a></p>
+<p><a href="build-tools-gradle.html" class="xref page">Building components with Gradle</a></p>
 </li>
 <li>
-<p><a href="wrapping-a-beam-io.html" class="page">Wrapping a Beam I/O</a></p>
+<p><a href="wrapping-a-beam-io.html" class="xref page">Wrapping a Beam I/O</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>In any case, follow these <a href="best-practices.html" class="page">best practices</a> to ensure the components you develop are optimized.</p>
+<p>In any case, follow these <a href="best-practices.html" class="xref page">best practices</a> to ensure the components you develop are optimized.</p>
 </div>
 <div class="paragraph">
 <p>You can also learn more about component loading and plugins here:</p>
@@ -661,7 +665,7 @@ Using your Java IDE along with a build tool supported by the framework, you can 
 <div class="ulist">
 <ul>
 <li>
-<p><a href="component-loading.html" class="page">Loading a component</a></p>
+<p><a href="component-loading.html" class="xref page">Loading a component</a></p>
 </li>
 </ul>
 </div>
@@ -688,7 +692,7 @@ Using your Java IDE along with a build tool supported by the framework, you can 
 <p>A component can belong to one family only and to one or several categories. If not specified, the category defaults to <code>Misc</code>.</p>
 </div>
 <div class="paragraph">
-<p>The <code>package-info.java</code> also defines the component family icon, which is different from the component icon. You can learn how to customize this icon in <a href="component-defining-custom-icon.html" class="page">this section</a>.</p>
+<p>The <code>package-info.java</code> also defines the component family icon, which is different from the component icon. You can learn how to customize this icon in <a href="component-defining-custom-icon.html" class="xref page">this section</a>.</p>
 </div>
 <div class="paragraph">
 <p>Here is a sample <code>package-info.java</code>:</p>
@@ -728,11 +732,11 @@ Metadata is set on the component class and belongs to the <code>org.talend.sdk.c
 <p><strong>@Icon</strong>: Sets an icon key used to represent the component.
 You can use a custom key with the <code>custom()</code> method but the icon may not be rendered properly. The icon defaults to <strong>Star</strong>.<br>
 You can use a custom icon from the <a href="icons.html">icon gallery</a> or create your own.<br>
-Learn how to set a custom icon for your component in <a href="component-defining-custom-icon.html" class="page">this section</a>.</p>
+Learn how to set a custom icon for your component in <a href="component-defining-custom-icon.html" class="xref page">this section</a>.</p>
 </li>
 <li>
 <p><strong>@Version</strong>: Sets the component version. 1 by default.<br>
-Learn how to manage different versions and migrations between your component versions in <a href="component-versions-and-migration.html" class="page">this section</a>.</p>
+Learn how to manage different versions and migrations between your component versions in <a href="component-versions-and-migration.html" class="xref page">this section</a>.</p>
 </li>
 </ul>
 </div>
@@ -814,10 +818,10 @@ The icon file needs to have a name following the convention <code>IconName_icon3
 <div class="ulist">
 <ul>
 <li>
-<p><a href="component-define-input.html" class="page">Defining an input component</a></p>
+<p><a href="component-define-input.html" class="xref page">Defining an input component</a></p>
 </li>
 <li>
-<p><a href="component-define-processor-output.html" class="page">Defining a processor or output component</a></p>
+<p><a href="component-define-processor-output.html" class="xref page">Defining a processor or output component</a></p>
 </li>
 </ul>
 </div>
@@ -851,25 +855,25 @@ public class MyProcessor {
 <div class="ulist">
 <ul>
 <li>
-<p><a href="methodology-creating-components.html" class="page">Methodology for creating components</a></p>
+<p><a href="methodology-creating-components.html" class="xref page">Methodology for creating components</a></p>
 </li>
 <li>
-<p><a href="tutorial-generate-project-using-starter.html" class="page">Generating a project using the starter</a></p>
+<p><a href="tutorial-generate-project-using-starter.html" class="xref page">Generating a project using the starter</a></p>
 </li>
 <li>
-<p><a href="component-versions-and-migration.html" class="page">Managing component versions</a></p>
+<p><a href="component-versions-and-migration.html" class="xref page">Managing component versions</a></p>
 </li>
 <li>
-<p><a href="component-define-input.html" class="page">Defining an input component</a></p>
+<p><a href="component-define-input.html" class="xref page">Defining an input component</a></p>
 </li>
 <li>
-<p><a href="component-define-processor-output.html" class="page">Defining a processor or output component</a></p>
+<p><a href="component-define-processor-output.html" class="xref page">Defining a processor or output component</a></p>
 </li>
 <li>
-<p><a href="component-configuration.html" class="page">Defining component layout and configuration</a></p>
+<p><a href="component-configuration.html" class="xref page">Defining component layout and configuration</a></p>
 </li>
 <li>
-<p><a href="best-practices.html" class="page">Best practices</a></p>
+<p><a href="best-practices.html" class="xref page">Best practices</a></p>
 </li>
 </ul>
 </div>
@@ -889,10 +893,10 @@ public class MyProcessor {
 - The source logic defined through a producer.</p>
 </div>
 <div class="paragraph">
-<p>Before implementing the component logic and defining its layout and configurable fields, make sure you have specified its basic metadata, as detailed in <a href="component-registering.html" class="page">this document</a>.</p>
+<p>Before implementing the component logic and defining its layout and configurable fields, make sure you have specified its basic metadata, as detailed in <a href="component-registering.html" class="xref page">this document</a>.</p>
 </div>
 <div class="sect2">
-<h3 id="_defining_a_partition_mapper"><a class="anchor" href="#_defining_a_partition_mapper"></a><a href="component-partition-mapper.html" class="page">Defining a partition mapper</a></h3>
+<h3 id="_defining_a_partition_mapper"><a class="anchor" href="#_defining_a_partition_mapper"></a><a href="component-partition-mapper.html" class="xref page">Defining a partition mapper</a></h3>
 <div class="sect3">
 <h4 id="partition-mapper"><a class="anchor" href="#partition-mapper"></a>What is a partition mapper</h4>
 <div class="paragraph">
@@ -1004,7 +1008,7 @@ public MyProducer create() {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_defining_the_producer_method"><a class="anchor" href="#_defining_the_producer_method"></a><a href="component-producer.html" class="page">Defining the producer method</a></h3>
+<h3 id="_defining_the_producer_method"><a class="anchor" href="#_defining_the_producer_method"></a><a href="component-producer.html" class="xref page">Defining the producer method</a></h3>
 <div class="paragraph">
 <p>The <code>Producer</code> method defines the source logic of an input component. It handles the interaction with a physical source and produces input data for the processing flow.</p>
 </div>
@@ -1025,31 +1029,31 @@ public MyData produces() {
 <div class="ulist">
 <ul>
 <li>
-<p><a href="methodology-creating-components.html" class="page">Methodology for creating components</a></p>
+<p><a href="methodology-creating-components.html" class="xref page">Methodology for creating components</a></p>
 </li>
 <li>
-<p><a href="tutorial-generate-project-using-starter.html" class="page">Generating a project using the starter</a></p>
+<p><a href="tutorial-generate-project-using-starter.html" class="xref page">Generating a project using the starter</a></p>
 </li>
 <li>
-<p><a href="component-registering.html" class="page">Registering a component</a></p>
+<p><a href="component-registering.html" class="xref page">Registering a component</a></p>
 </li>
 <li>
-<p><a href="component-execution.html" class="page">General component execution logic</a></p>
+<p><a href="component-execution.html" class="xref page">General component execution logic</a></p>
 </li>
 <li>
-<p><a href="component-configuration.html" class="page">Defining component layout and configuration</a></p>
+<p><a href="component-configuration.html" class="xref page">Defining component layout and configuration</a></p>
 </li>
 <li>
-<p><a href="component-internationalization.html" class="page">Internationalizing a component</a></p>
+<p><a href="component-internationalization.html" class="xref page">Internationalizing a component</a></p>
 </li>
 <li>
-<p><a href="tutorial-configuration-sensitive-data.html" class="page">Masking sensitive data</a></p>
+<p><a href="tutorial-configuration-sensitive-data.html" class="xref page">Masking sensitive data</a></p>
 </li>
 <li>
-<p><a href="component-implementing-streaming.html" class="page">Implementing streaming on a component</a></p>
+<p><a href="component-implementing-streaming.html" class="xref page">Implementing streaming on a component</a></p>
 </li>
 <li>
-<p><a href="best-practices.html" class="page">Best practices</a></p>
+<p><a href="best-practices.html" class="xref page">Best practices</a></p>
 </li>
 </ul>
 </div>
@@ -1063,10 +1067,10 @@ public MyData produces() {
 <p>Processors and output components are the components in charge of reading, processing and transforming data in a Talend job, as well as passing it to its required destination.</p>
 </div>
 <div class="paragraph">
-<p>Before implementing the component logic and defining its layout and configurable fields, make sure you have specified its basic metadata, as detailed in <a href="component-registering.html" class="page">this document</a>.</p>
+<p>Before implementing the component logic and defining its layout and configurable fields, make sure you have specified its basic metadata, as detailed in <a href="component-registering.html" class="xref page">this document</a>.</p>
 </div>
 <div class="sect2">
-<h3 id="_defining_a_processor"><a class="anchor" href="#_defining_a_processor"></a><a href="component-processor.html" class="page">Defining a processor</a></h3>
+<h3 id="_defining_a_processor"><a class="anchor" href="#_defining_a_processor"></a><a href="component-processor.html" class="xref page">Defining a processor</a></h3>
 <div class="sect3">
 <h4 id="component-type-processor"><a class="anchor" href="#component-type-processor"></a>What is a processor</h4>
 <div class="paragraph">
@@ -1153,7 +1157,7 @@ public void endBatch() {
 </div>
 </div>
 <div class="paragraph">
-<p>You can optimize the data batch processing by using the <code>maxBatchSize</code> parameter. This parameter is automatically implemented on the component when it is deployed to a Talend application. Only the logic needs to be implemented. Learn how to implement chunking/bulking in <a href="concept-processor-and-batch-processing.html" class="page">this document</a>.</p>
+<p>You can optimize the data batch processing by using the <code>maxBatchSize</code> parameter. This parameter is automatically implemented on the component when it is deployed to a Talend application. Only the logic needs to be implemented. Learn how to implement chunking/bulking in <a href="concept-processor-and-batch-processing.html" class="xref page">this document</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1320,23 +1324,23 @@ public class BulkProcessor implements Serializable {
 </div>
 </div>
 <div class="paragraph">
-<p>You can learn more about processors in <a href="component-define-processor-output.html" class="page">this document</a>.</p>
+<p>You can learn more about processors in <a href="component-define-processor-output.html" class="xref page">this document</a>.</p>
 </div>
 <div class="sect4 relatedlinks">
 <h5 id="_related_articles_3"><a class="anchor" href="#_related_articles_3"></a>Related articles</h5>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="component-define-processor-output.html" class="page">Defining a processor/output logic</a></p>
+<p><a href="component-define-processor-output.html" class="xref page">Defining a processor/output logic</a></p>
 </li>
 <li>
-<p><a href="component-execution.html" class="page">General component execution logic</a></p>
+<p><a href="component-execution.html" class="xref page">General component execution logic</a></p>
 </li>
 <li>
-<p><a href="concept-processor-and-batch-processing.html" class="page">Implementing bulk processing</a></p>
+<p><a href="concept-processor-and-batch-processing.html" class="xref page">Implementing bulk processing</a></p>
 </li>
 <li>
-<p><a href="best-practices.html" class="page">Best practices</a></p>
+<p><a href="best-practices.html" class="xref page">Best practices</a></p>
 </li>
 </ul>
 </div>
@@ -1344,7 +1348,7 @@ public class BulkProcessor implements Serializable {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_defining_an_output"><a class="anchor" href="#_defining_an_output"></a><a href="component-output.html" class="page">Defining an output</a></h3>
+<h3 id="_defining_an_output"><a class="anchor" href="#_defining_an_output"></a><a href="component-output.html" class="xref page">Defining an output</a></h3>
 <div class="sect3">
 <h4 id="_what_is_an_output"><a class="anchor" href="#_what_is_an_output"></a>What is an output</h4>
 <div class="paragraph">
@@ -1364,7 +1368,7 @@ public void store(final MyData data) {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_defining_a_combiner"><a class="anchor" href="#_defining_a_combiner"></a><a href="component-combiner.html" class="page">Defining a combiner</a></h3>
+<h3 id="_defining_a_combiner"><a class="anchor" href="#_defining_a_combiner"></a><a href="component-combiner.html" class="xref page">Defining a combiner</a></h3>
 <div class="sect3">
 <h4 id="_what_is_a_combiner"><a class="anchor" href="#_what_is_a_combiner"></a>What is a combiner</h4>
 <div class="paragraph">
@@ -1378,31 +1382,31 @@ A combiner is the symmetric part of a partition mapper and allows to aggregate r
 <div class="ulist">
 <ul>
 <li>
-<p><a href="methodology-creating-components.html" class="page">Methodology for creating components</a></p>
+<p><a href="methodology-creating-components.html" class="xref page">Methodology for creating components</a></p>
 </li>
 <li>
-<p><a href="tutorial-generate-project-using-starter.html" class="page">Generating a project using the starter</a></p>
+<p><a href="tutorial-generate-project-using-starter.html" class="xref page">Generating a project using the starter</a></p>
 </li>
 <li>
-<p><a href="component-registering.html" class="page">Registering a component</a></p>
+<p><a href="component-registering.html" class="xref page">Registering a component</a></p>
 </li>
 <li>
-<p><a href="component-execution.html" class="page">General component execution logic</a></p>
+<p><a href="component-execution.html" class="xref page">General component execution logic</a></p>
 </li>
 <li>
-<p><a href="component-configuration.html" class="page">Defining component layout and configuration</a></p>
+<p><a href="component-configuration.html" class="xref page">Defining component layout and configuration</a></p>
 </li>
 <li>
-<p><a href="concept-processor-and-batch-processing.html" class="page">Implementing bulk processing</a></p>
+<p><a href="concept-processor-and-batch-processing.html" class="xref page">Implementing bulk processing</a></p>
 </li>
 <li>
-<p><a href="component-internationalization.html" class="page">Internationalizing a component</a></p>
+<p><a href="component-internationalization.html" class="xref page">Internationalizing a component</a></p>
 </li>
 <li>
-<p><a href="tutorial-configuration-sensitive-data.html" class="page">Masking sensitive data</a></p>
+<p><a href="tutorial-configuration-sensitive-data.html" class="xref page">Masking sensitive data</a></p>
 </li>
 <li>
-<p><a href="best-practices.html" class="page">Best practices</a></p>
+<p><a href="best-practices.html" class="xref page">Best practices</a></p>
 </li>
 </ul>
 </div>
@@ -2487,7 +2491,7 @@ When using the programmatic API, metadata is prefixed with <code>tcomp::</code>.
 </table>
 </div>
 <div class="paragraph">
-<p>You can also check <a href="tutorial-configuration-sensitive-data.html" class="page">this example</a> about masking credentials.</p>
+<p>You can also check <a href="tutorial-configuration-sensitive-data.html" class="xref page">this example</a> about masking credentials.</p>
 </div>
 <div class="paragraph">
 <p>Target support should cover <code>org.talend.core.model.process.EParameterFieldType</code> but you need to ensure that the web renderer is able to handle the same widgets.</p>
@@ -2499,31 +2503,31 @@ When using the programmatic API, metadata is prefixed with <code>tcomp::</code>.
 <div class="ulist">
 <ul>
 <li>
-<p><a href="methodology-creating-components.html" class="page">Methodology for creating components</a></p>
+<p><a href="methodology-creating-components.html" class="xref page">Methodology for creating components</a></p>
 </li>
 <li>
-<p><a href="tutorial-generate-project-using-starter.html" class="page">Generating a project using the starter</a></p>
+<p><a href="tutorial-generate-project-using-starter.html" class="xref page">Generating a project using the starter</a></p>
 </li>
 <li>
-<p><a href="component-define-input.html" class="page">Defining an input component</a></p>
+<p><a href="component-define-input.html" class="xref page">Defining an input component</a></p>
 </li>
 <li>
-<p><a href="component-define-processor-output.html" class="page">Defining a processor or output component</a></p>
+<p><a href="component-define-processor-output.html" class="xref page">Defining a processor or output component</a></p>
 </li>
 <li>
-<p><a href="component-registering.html" class="page">Registering a component</a></p>
+<p><a href="component-registering.html" class="xref page">Registering a component</a></p>
 </li>
 <li>
-<p><a href="component-internationalization.html" class="page">Internationalizing a component</a></p>
+<p><a href="component-internationalization.html" class="xref page">Internationalizing a component</a></p>
 </li>
 <li>
-<p><a href="component-loading.html" class="page">Loading a component</a></p>
+<p><a href="component-loading.html" class="xref page">Loading a component</a></p>
 </li>
 <li>
-<p><a href="tutorial-configuration-sensitive-data.html" class="page">Masking sensitive data</a></p>
+<p><a href="tutorial-configuration-sensitive-data.html" class="xref page">Masking sensitive data</a></p>
 </li>
 <li>
-<p><a href="best-practices.html" class="page">Best practices</a></p>
+<p><a href="best-practices.html" class="xref page">Best practices</a></p>
 </li>
 </ul>
 </div>
@@ -2662,7 +2666,7 @@ When using the programmatic API, metadata is prefixed with <code>tcomp::</code>.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>memory.list._displayName = Memory List</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">memory.list._displayName = Memory List</code></pre>
 </div>
 </div>
 </div>
@@ -2692,7 +2696,7 @@ This is useful in case of common configurations shared by multiple components.</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>MyConfig.host._displayName = Server Host Name
+<pre class="highlightjs highlight"><code class="language-none hljs">MyConfig.host._displayName = Server Host Name
 MyConfig.host._placeholder = Enter Server Host Name...
 
 MyConfig.port._displayName = Server Port
@@ -2717,16 +2721,16 @@ If you have a display name using the property path, it overrides the display nam
 <div class="ulist">
 <ul>
 <li>
-<p><a href="tutorial-generate-project-using-starter.html" class="page">Generating a project using the starter</a></p>
+<p><a href="tutorial-generate-project-using-starter.html" class="xref page">Generating a project using the starter</a></p>
 </li>
 <li>
-<p><a href="component-configuration.html" class="page">Defining component layout and configuration</a></p>
+<p><a href="component-configuration.html" class="xref page">Defining component layout and configuration</a></p>
 </li>
 <li>
-<p><a href="tutorial-configuration-sensitive-data.html" class="page">Masking sensitive data</a></p>
+<p><a href="tutorial-configuration-sensitive-data.html" class="xref page">Masking sensitive data</a></p>
 </li>
 <li>
-<p><a href="best-practices.html" class="page">Best practices</a></p>
+<p><a href="best-practices.html" class="xref page">Best practices</a></p>
 </li>
 </ul>
 </div>
@@ -2938,28 +2942,28 @@ public class RestApiConfiguration implements Serializable {
 <div class="ulist">
 <ul>
 <li>
-<p><a href="tutorial-generate-project-using-starter.html" class="page">Generating a project using the starter</a></p>
+<p><a href="tutorial-generate-project-using-starter.html" class="xref page">Generating a project using the starter</a></p>
 </li>
 <li>
-<p><a href="component-define-input.html" class="page">Defining an input component</a></p>
+<p><a href="component-define-input.html" class="xref page">Defining an input component</a></p>
 </li>
 <li>
-<p><a href="component-define-processor-output.html" class="page">Defining a processor or output component</a></p>
+<p><a href="component-define-processor-output.html" class="xref page">Defining a processor or output component</a></p>
 </li>
 <li>
-<p><a href="component-configuration.html" class="page">Configuring a component</a></p>
+<p><a href="component-configuration.html" class="xref page">Configuring a component</a></p>
 </li>
 <li>
-<p><a href="component-registering.html" class="page">Registering a component</a></p>
+<p><a href="component-registering.html" class="xref page">Registering a component</a></p>
 </li>
 <li>
-<p><a href="component-internationalization.html" class="page">Internationalizing a component</a></p>
+<p><a href="component-internationalization.html" class="xref page">Internationalizing a component</a></p>
 </li>
 <li>
-<p><a href="component-loading.html" class="page">Loading a component</a></p>
+<p><a href="component-loading.html" class="xref page">Loading a component</a></p>
 </li>
 <li>
-<p><a href="best-practices.html" class="page">Best practices</a></p>
+<p><a href="best-practices.html" class="xref page">Best practices</a></p>
 </li>
 </ul>
 </div>
@@ -3068,23 +3072,23 @@ public class BulkProcessor implements Serializable {
 </div>
 </div>
 <div class="paragraph">
-<p>You can learn more about processors in <a href="component-define-processor-output.html" class="page">this document</a>.</p>
+<p>You can learn more about processors in <a href="component-define-processor-output.html" class="xref page">this document</a>.</p>
 </div>
 <div class="sect2 relatedlinks">
 <h3 id="_related_articles_8"><a class="anchor" href="#_related_articles_8"></a>Related articles</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="component-define-processor-output.html" class="page">Defining a processor/output logic</a></p>
+<p><a href="component-define-processor-output.html" class="xref page">Defining a processor/output logic</a></p>
 </li>
 <li>
-<p><a href="component-execution.html" class="page">General component execution logic</a></p>
+<p><a href="component-execution.html" class="xref page">General component execution logic</a></p>
 </li>
 <li>
-<p><a href="concept-processor-and-batch-processing.html" class="page">Implementing bulk processing</a></p>
+<p><a href="concept-processor-and-batch-processing.html" class="xref page">Implementing bulk processing</a></p>
 </li>
 <li>
-<p><a href="best-practices.html" class="page">Best practices</a></p>
+<p><a href="best-practices.html" class="xref page">Best practices</a></p>
 </li>
 </ul>
 </div>
@@ -3777,7 +3781,7 @@ This goal is deprecated and will be removed in a future release.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>mvn talend-component:car</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">mvn talend-component:car</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3963,13 +3967,13 @@ Call <code>mvn talend-component:help -Ddetail=true -Dgoal=&lt;goal-name&gt;</cod
 <div class="ulist">
 <ul>
 <li>
-<p><a href="best-practices.html" class="page">Best practices</a></p>
+<p><a href="best-practices.html" class="xref page">Best practices</a></p>
 </li>
 <li>
-<p><a href="build-tools-gradle.html" class="page">Building components with Gradle</a></p>
+<p><a href="build-tools-gradle.html" class="xref page">Building components with Gradle</a></p>
 </li>
 <li>
-<p><a href="studio.html" class="page">Integrating to the Studio</a></p>
+<p><a href="studio.html" class="xref page">Integrating to the Studio</a></p>
 </li>
 </ul>
 </div>
@@ -3984,7 +3988,7 @@ Call <code>mvn talend-component:help -Ddetail=true -Dgoal=&lt;goal-name&gt;</cod
 A Talend Component Kit plugin is available for each of the supported build tools.</p>
 </div>
 <div class="paragraph">
-<p><code>gradle-talend-component</code> helps you write components that match the best practices. It is inspired from the Maven plugin and adds the ability to generate automatically the <code>dependencies.txt</code> file used by the SDK to build the component classpath. For more information on the configuration, refer to the <a href="build-tools-maven.html" class="page">Maven</a> properties matching the attributes.</p>
+<p><code>gradle-talend-component</code> helps you write components that match the best practices. It is inspired from the Maven plugin and adds the ability to generate automatically the <code>dependencies.txt</code> file used by the SDK to build the component classpath. For more information on the configuration, refer to the <a href="build-tools-maven.html" class="xref page">Maven</a> properties matching the attributes.</p>
 </div>
 <div class="paragraph">
 <p>You can use it as follows:</p>
@@ -4061,13 +4065,13 @@ talendComponentKit {
 <div class="ulist">
 <ul>
 <li>
-<p><a href="best-practices.html" class="page">Best practices</a></p>
+<p><a href="best-practices.html" class="xref page">Best practices</a></p>
 </li>
 <li>
-<p><a href="build-tools-maven.html" class="page">Building components with Maven</a></p>
+<p><a href="build-tools-maven.html" class="xref page">Building components with Maven</a></p>
 </li>
 <li>
-<p><a href="studio.html" class="page">Integrating to the Studio</a></p>
+<p><a href="studio.html" class="xref page">Integrating to the Studio</a></p>
 </li>
 </ul>
 </div>
@@ -4345,19 +4349,19 @@ public class KafkaInput extends PTransform&lt;PBegin, PCollection&lt;Record&gt;&
 <div class="ulist">
 <ul>
 <li>
-<p><a href="component-define-input.html" class="page">Defining an input component</a></p>
+<p><a href="component-define-input.html" class="xref page">Defining an input component</a></p>
 </li>
 <li>
-<p><a href="component-define-processor-output.html" class="page">Defining a processor or output component</a></p>
+<p><a href="component-define-processor-output.html" class="xref page">Defining a processor or output component</a></p>
 </li>
 <li>
-<p><a href="services-pipeline.html" class="page">Creating a job pipeline</a></p>
+<p><a href="services-pipeline.html" class="xref page">Creating a job pipeline</a></p>
 </li>
 <li>
-<p><a href="testing-beam.html" class="page">Beam testing</a></p>
+<p><a href="testing-beam.html" class="xref page">Beam testing</a></p>
 </li>
 <li>
-<p><a href="testing-multiple-envs.html" class="page">Testing in multiple environments</a></p>
+<p><a href="testing-multiple-envs.html" class="xref page">Testing in multiple environments</a></p>
 </li>
 </ul>
 </div>
@@ -4585,7 +4589,7 @@ public HealthCheckStatus healthCheck(@Option("datastore") JdbcDataStore datastor
 <div class="sect4">
 <h5 id="_light_validations"><a class="anchor" href="#_light_validations"></a>Light validations</h5>
 <div class="paragraph">
-<p>Light validations are all the validations you can execute on the client side. They are listed in the <a href="component-configuration.html#documentation-ui-hints" class="page">UI hint</a> section.</p>
+<p>Light validations are all the validations you can execute on the client side. They are listed in the <a href="component-configuration.html#documentation-ui-hints" class="xref page">UI hint</a> section.</p>
 </div>
 <div class="paragraph">
 <p>Use light validations first before going with custom validations because they are more efficient.</p>
@@ -4788,34 +4792,34 @@ public class JdbcPartitionMapper
 <div class="ulist">
 <ul>
 <li>
-<p><a href="tutorial-generate-project-using-starter.html" class="page">Generating a project using the starter</a></p>
+<p><a href="tutorial-generate-project-using-starter.html" class="xref page">Generating a project using the starter</a></p>
 </li>
 <li>
-<p><a href="component-define-input.html" class="page">Defining an input component</a></p>
+<p><a href="component-define-input.html" class="xref page">Defining an input component</a></p>
 </li>
 <li>
-<p><a href="component-define-processor-output.html" class="page">Defining a processor or output component</a></p>
+<p><a href="component-define-processor-output.html" class="xref page">Defining a processor or output component</a></p>
 </li>
 <li>
-<p><a href="component-configuration.html" class="page">Configuring a component</a></p>
+<p><a href="component-configuration.html" class="xref page">Configuring a component</a></p>
 </li>
 <li>
-<p><a href="component-registering.html" class="page">Registering a component</a></p>
+<p><a href="component-registering.html" class="xref page">Registering a component</a></p>
 </li>
 <li>
-<p><a href="component-internationalization.html" class="page">Internationalizing a component</a></p>
+<p><a href="component-internationalization.html" class="xref page">Internationalizing a component</a></p>
 </li>
 <li>
-<p><a href="component-loading.html" class="page">Loading a component</a></p>
+<p><a href="component-loading.html" class="xref page">Loading a component</a></p>
 </li>
 <li>
-<p><a href="tutorial-configuration-sensitive-data.html" class="page">Masking sensitive data</a></p>
+<p><a href="tutorial-configuration-sensitive-data.html" class="xref page">Masking sensitive data</a></p>
 </li>
 <li>
-<p><a href="index-defining-services.html" class="page">Defining services</a></p>
+<p><a href="index-defining-services.html" class="xref page">Defining services</a></p>
 </li>
 <li>
-<p><a href="index-testing-components.html" class="page">Testing components</a></p>
+<p><a href="index-testing-components.html" class="xref page">Testing components</a></p>
 </li>
 </ul>
 </div>
@@ -4943,7 +4947,7 @@ The following files have been resolved:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>.
+<pre class="highlightjs highlight"><code class="language-none hljs">.
 ├── groupId1
 │   └── artifactId1
 │       ├── version1
@@ -7039,28 +7043,28 @@ In such a case, exclusions win over inclusions.
 <div class="ulist">
 <ul>
 <li>
-<p><a href="tutorial-generate-project-using-starter.html" class="page">Generating a project using the starter</a></p>
+<p><a href="tutorial-generate-project-using-starter.html" class="xref page">Generating a project using the starter</a></p>
 </li>
 <li>
-<p><a href="component-define-input.html" class="page">Defining an input component</a></p>
+<p><a href="component-define-input.html" class="xref page">Defining an input component</a></p>
 </li>
 <li>
-<p><a href="component-define-processor-output.html" class="page">Defining a processor or output component</a></p>
+<p><a href="component-define-processor-output.html" class="xref page">Defining a processor or output component</a></p>
 </li>
 <li>
-<p><a href="component-configuration.html" class="page">Defining component layout and configuration</a></p>
+<p><a href="component-configuration.html" class="xref page">Defining component layout and configuration</a></p>
 </li>
 <li>
-<p><a href="component-registering.html" class="page">Registering a component</a></p>
+<p><a href="component-registering.html" class="xref page">Registering a component</a></p>
 </li>
 <li>
-<p><a href="component-internationalization.html" class="page">Internationalizing a component</a></p>
+<p><a href="component-internationalization.html" class="xref page">Internationalizing a component</a></p>
 </li>
 <li>
-<p><a href="tutorial-configuration-sensitive-data.html" class="page">Masking sensitive data</a></p>
+<p><a href="tutorial-configuration-sensitive-data.html" class="xref page">Masking sensitive data</a></p>
 </li>
 <li>
-<p><a href="best-practices.html" class="page">Best practices</a></p>
+<p><a href="best-practices.html" class="xref page">Best practices</a></p>
 </li>
 </ul>
 </div>
@@ -7082,13 +7086,13 @@ In such a case, exclusions win over inclusions.
 
                     <li>
                                 <a class="article-side-actions-link" target="_blank"
-                                   href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Ftalend.github.io%2Fcomponent-runtime%2Fmain%2F1.43.0%2Fpdf-creating-components.html&text=Talend%20Component%20Kit%20%3E%3E%20Implementing%20components%20%3E%3E%20&tw_p=tweetbutton&url=https%3A%2F%2Ftalend.github.io%2Fcomponent-runtime%2Fmain%2F1.43.0%2Fpdf-creating-components.html">
+                                   href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Ftalend.github.io%2Fcomponent-runtime%2Fmain%2Flatest%2Fpdf-creating-components.html&text=Talend%20Component%20Kit%20%3E%3E%20Implementing%20components%20%3E%3E%20&tw_p=tweetbutton&url=https%3A%2F%2Ftalend.github.io%2Fcomponent-runtime%2Fmain%2Flatest%2Fpdf-creating-components.html">
                                     <i class="fab fa-twitter"></i> &nbsp; &nbsp; Tweet
                                 </a>
                             </li>
                             <li>
                                 <a class="article-side-actions-link"
-                                   href="mailto:?subject=Talend%20Component%20Kit%3A%20Implementing%20components&body=Talend%20Component%20Kit%3A%20Implementing%20components%0A%0Ahttps%3A%2F%2Ftalend.github.io%2Fcomponent-runtime%2Fmain%2F1.43.0%2Fpdf-creating-components.html">
+                                   href="mailto:?subject=Talend%20Component%20Kit%3A%20Implementing%20components&body=Talend%20Component%20Kit%3A%20Implementing%20components%0A%0Ahttps%3A%2F%2Ftalend.github.io%2Fcomponent-runtime%2Fmain%2Flatest%2Fpdf-creating-components.html">
                                     <i class="far fa-envelope"></i> &nbsp; &nbsp; Mail
                                 </a>
                             </li>
@@ -7104,7 +7108,7 @@ In such a case, exclusions win over inclusions.
     </article>
               </div>
             </main>
-              <footer class="footer ">
+      <footer class="footer ">
     <div class="footer-with-copyright footer-with-links">
         <ul class="footer-links pull-left">
             <li><a class="gwt-Anchor" href="http://www.talend.com/">Talend</a></li>
@@ -7114,10 +7118,10 @@ In such a case, exclusions win over inclusions.
         <div class="footer-copyright pull-right" style="">&copy; 2019 Talend Inc. All rights reserved.</div>
     </div>
 </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-<script src="../../_/../js/anchorific.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchorific/1.2/min/anchorific.min.js" integrity="sha384-ACUAcVkJ3XBvxLPJQqN8h9BfzCtcyqiQoemYyYiS7JJLg9O6aVOVzRYLwqxM2d7/" crossorigin="anonymous"></script>
 <script src="../../_/js/talend.js"></script>
   </body>
 </html>
