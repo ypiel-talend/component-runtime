@@ -6,16 +6,16 @@
     <title>Talend Component Kit Developer Reference Guide :: Studio schema</title>
     <link rel="canonical" href="https://talend.github.io/component-runtime/main/latest/studio-schema.html">
     <meta name="description" content="How to access studio&#x27;s schema in your component.">
-    <meta name="keywords" content="studio, schema, metadata, dynamic, columns">
+    <meta name="keywords" content="studio, schema, metadata, dynamic, columns, output, sink, connector">
     <meta name="generator" content="Talend Component Kit Generator">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Studio schema :: Talend Component Kit Developer Reference Guide</title>
     <link rel="canonical" href="https://talend.github.io/component-runtime/main/latest/studio-schema.html">
     <meta name="description" content="How to access studio's schema in your component.">
-    <meta name="keywords" content="studio, schema, metadata, dynamic, columns">
+    <meta name="keywords" content="studio, schema, metadata, dynamic, columns, output, sink, connector">
     <meta name="generator" content="Antora 3.0.1">
-<meta name="date" content="2022-03-02T16:09:22.131Z" scheme="YYYY-MM-DDTHH:mm:ss.sssZ">
+<meta name="date" content="2022-03-02T20:05:51.577Z" scheme="YYYY-MM-DDTHH:mm:ss.sssZ">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/idea.min.css" integrity="sha256-rD61BPsgKHzJPyg7vpXaYOw6tMYuY2fz1p9033NYeM8=" crossorigin="anonymous" />
@@ -815,6 +815,65 @@ public class SchemaInfo implements Serializable {
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_notes_when_designing_an_output_connector"><a class="anchor" href="#_notes_when_designing_an_output_connector"></a>Notes when designing an output connector</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Available since 1.43.x release
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>As Talend Component Kit <a href="/component-runtime/apidocs/1.43.0/api/org/talend/sdk/component/api/record/Schema.Type.html" target="_blank" rel="noopener">Schema</a>'s types aren&#8217;t matching all Studio types, we wrap those types in wider
+types (like <code>Character</code> or <code>char</code> wrapped into <code>String</code>, <code>Short</code> to <code>Integer</code>, and so on&#8230;&#8203;).</p>
+</div>
+<div class="paragraph">
+<p>Anyway, the original type coming from Studio&#8217;s <code>IPersistableRow</code> is stored in record&#8217;s schema properties under the property name <code>talend.studio.type</code>.</p>
+</div>
+<div class="paragraph">
+<p>Studio managed types are: <code>id_BigDecimal</code>, <code>id_Boolean</code>, <code>id_Byte</code>, <code>id_byte[]</code>, <code>id_Character</code>, <code>id_Date</code>, <code>id_Double</code>, <code>id_Document</code>, <code>id_Dynamic</code>, <code>id_Float</code>, <code>id_Integer</code>, <code>id_List</code>, <code>id_Long</code>, <code>id_Object</code>, <code>id_Short</code>, <code>id_String</code>.</p>
+</div>
+<div class="paragraph">
+<p>When handling an output connector designed for Studio, you should have to <strong>check</strong> for this property to get an accurate type for output.</p>
+</div>
+<div class="paragraph">
+<p>For instance, <code>java.math.BigDecimal</code> is handled in framework as a <code>Type.STRING</code>, so when an output connector will receive
+a record, in studio context, you&#8217;ll need to check for the property and cast it correctly.</p>
+</div>
+<div class="paragraph">
+<p>Here is a simple processor before writing to backend destination:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@ElementListener
+public void process(final Record input) {
+    final String value = input.getString("myBigDecimal");
+    final Boolean isBigDec = "id_BigDecimal".equals(input.getSchema().getEntry("myBigDecimal").getProp("talend.studio.type"));
+    queueWriter.write(isBigDec ? new BigDecimal(value) : value);
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This usage of properties is cumbersome but may fix some potential issues for now. We plan to widen managed types in Record and Schema in a few iterations (No ETA defined yet).
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1 relatedlinks">
