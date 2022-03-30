@@ -116,6 +116,11 @@ public class SchemaImpl implements Schema {
     }
 
     @Override
+    public Schema addEntries(Iterable<Entry> newEntries) {
+        return new SchemaImplWrapper(this, newEntries);
+    }
+
+    @Override
     @JsonbTransient
     public Stream<Entry> getAllEntries() {
         return Stream.concat(this.metadataEntries.stream(), this.entries.stream());

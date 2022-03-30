@@ -35,4 +35,8 @@ public class AvroRecordBuilder extends RecordImpl.BuilderImpl {
     public Record build() {
         return new AvroRecord(super.build());
     }
+
+
+
+
 }

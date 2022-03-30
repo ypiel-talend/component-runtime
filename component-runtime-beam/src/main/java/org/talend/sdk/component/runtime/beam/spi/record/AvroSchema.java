@@ -35,6 +35,7 @@ import org.apache.avro.Schema;
 import org.apache.avro.Schema.Field;
 import org.talend.sdk.component.runtime.manager.service.api.Unwrappable;
 import org.talend.sdk.component.runtime.record.SchemaImpl.EntryImpl;
+import org.talend.sdk.component.runtime.record.SchemaImplWrapper;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -209,6 +210,11 @@ public class AvroSchema implements org.talend.sdk.component.api.record.Schema, A
             return null;
         }
         return getActualDelegate().getProp(property);
+    }
+
+    @Override
+    public org.talend.sdk.component.api.record.Schema addEntries(Iterable<Entry> newEntries) {
+        return new SchemaImplWrapper(this, newEntries);
     }
 
     @Override

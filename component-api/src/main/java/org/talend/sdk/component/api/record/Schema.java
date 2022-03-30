@@ -69,6 +69,10 @@ public interface Schema {
      */
     List<Entry> getMetadata();
 
+    default Schema addEntries(Iterable<Entry> newEntries) {
+        throw new UnsupportedOperationException("#addEntries is not implemented");
+    }
+
     /**
      * @return All entries, including data and metadata, of this schema.
      */

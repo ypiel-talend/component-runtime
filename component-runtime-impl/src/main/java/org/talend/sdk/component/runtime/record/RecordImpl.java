@@ -87,6 +87,11 @@ public final class RecordImpl implements Record {
         return RECORD_CONVERTERS.coerce(expectedType, value, name);
     }
 
+    @Override
+    public Record put(Map<String, Object> newValues) {
+        return new RecordImplWrapper(this, newValues);
+    }
+
     @Override // for debug purposes, don't use it for anything else
     public String toString() {
         try (final Jsonb jsonb = JsonbBuilder
@@ -113,6 +118,12 @@ public final class RecordImpl implements Record {
         return builder;
     }
 
+    public Record.Builder toBuilder() {
+        BuilderImpl builder = new BuilderImpl(this.schema);
+        builder.values.putAll(this.values);
+        return builder;
+    }
+
     // Entry creation can be optimized a bit but recent GC should not see it as a big deal
     public static class BuilderImpl implements Builder {
 
@@ -131,6 +142,8 @@ public final class RecordImpl implements Record {
         public BuilderImpl(final Schema providedSchema) {
             this.providedSchema = providedSchema;
         }
+
+
 
         private BuilderImpl(final List<Schema.Entry> entries, final Map<String, Object> values) {
             this.entries.addAll(entries);

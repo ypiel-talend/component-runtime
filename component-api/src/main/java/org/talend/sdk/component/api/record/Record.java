@@ -21,6 +21,7 @@ import java.time.ZonedDateTime;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
@@ -43,6 +44,10 @@ public interface Record {
      */
     default Builder withNewSchema(Schema schema) {
         throw new UnsupportedOperationException("#withNewSchema is not implemented");
+    }
+
+    default Record put(Map<String, Object> newValues) {
+        throw new UnsupportedOperationException("#Record.put is not implemented");
     }
 
     /**

@@ -25,6 +25,7 @@ import java.nio.ByteBuffer;
 import java.time.ZonedDateTime;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Map;
 import java.util.Objects;
 
 import javax.json.bind.annotation.JsonbTransient;
@@ -38,6 +39,7 @@ import org.talend.sdk.component.api.record.Schema;
 import org.talend.sdk.component.runtime.manager.service.api.Unwrappable;
 import org.talend.sdk.component.runtime.record.RecordConverters;
 import org.talend.sdk.component.runtime.record.RecordImpl;
+import org.talend.sdk.component.runtime.record.RecordImplWrapper;
 
 public class AvroRecord implements Record, AvroPropertyMapper, Unwrappable {
 
@@ -120,6 +122,24 @@ public class AvroRecord implements Record, AvroPropertyMapper, Unwrappable {
         newSchema.getAllEntries()
                 .filter(e -> Objects.equals(schema.getEntry(e.getName()), e))
                 .forEach(e -> builder.with(e, get(Object.class, e.getName())));
+        return builder;
+    }
+
+    @Override
+    public Record put(Map<String, Object> newValues) {
+        return new RecordImplWrapper(this, newValues);
+    }
+
+    public Record.Builder toBuilder() {
+        final AvroRecordBuilder builder = new AvroRecordBuilder(this.schema);
+        builder.getCurrentEntries().forEach(
+                (Schema.Entry e) -> {
+                    final Object value = this.get(Object.class, e.getName());
+                    if (value != null) {
+                        builder.with(e, value);
+                    }
+                }
+        );
         return builder;
     }
 
