@@ -43,6 +43,7 @@ import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
+import org.talend.sdk.component.server.front.model.ComponentDetail;
 import org.talend.sdk.component.server.front.model.ComponentDetailList;
 import org.talend.sdk.component.server.front.model.ComponentIndices;
 import org.talend.sdk.component.server.front.model.Dependencies;
@@ -153,6 +154,10 @@ public interface ComponentResource {
                     schema = @Schema(type = STRING, defaultValue = "en")) String language,
             @QueryParam("identifiers") @Parameter(name = "identifiers",
                     description = "the component identifiers to request.", in = QUERY) String[] ids);
+
+    @GET
+    @Path("dynamic")
+    ComponentDetail getDynamicDetail();
 
     // @Unused, only for sample
     class SampleErrorForBulk {

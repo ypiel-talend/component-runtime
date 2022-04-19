@@ -53,7 +53,7 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class UiSchemaConverter implements PropertyConverter {
-
+<
     private final String gridLayoutFilter;
 
     private final String family;
