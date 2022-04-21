@@ -19,10 +19,10 @@ public class CompositeForm extends ElementForm {
     }
 
     @Override
-    public JsonObjectBuilder toJson() {
-        final JsonObjectBuilder builder = super.toJson();
+    public JsonObjectBuilder toJson(final AnnotationFunction fct) {
+        final JsonObjectBuilder builder = super.toJson(fct);
         this.innerForms.forEach(
-                (String key, ElementForm form) -> builder.add(key, form.toJson())
+                (String key, ElementForm form) -> builder.add(key, form.toJson(fct))
         );
         return builder;
     }
