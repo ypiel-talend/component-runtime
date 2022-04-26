@@ -15,7 +15,7 @@
     <meta name="description" content="Talend Component Kit Changelog">
     <meta name="keywords" content="changelog, release note, latest changes, version">
     <meta name="generator" content="Antora 3.0.1">
-<meta name="date" content="2022-04-26T12:52:15.542Z" scheme="YYYY-MM-DDTHH:mm:ss.sssZ">
+<meta name="date" content="2022-04-26T15:44:51.054Z" scheme="YYYY-MM-DDTHH:mm:ss.sssZ">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/idea.min.css" integrity="sha256-rD61BPsgKHzJPyg7vpXaYOw6tMYuY2fz1p9033NYeM8=" crossorigin="anonymous" />
@@ -87,15 +87,12 @@
         <a class="navbar-single-link" href="https://talend.github.io/component-runtime/main/latest/index.html">Talend Component Kit</a>
         <div class="btn-group navbar-versions">
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                ${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}
+                1.45.0 (dev)
               <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
                 <li class="navbar-item version">
-                    <a href="index.html">${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}</a>
-                </li>
-                <li class="navbar-item version">
-                    <a href="../1.45.0/index.html">1.45.0</a>
+                    <a href="index.html">1.45.0</a>
                 </li>
                 <li class="navbar-item version">
                     <a href="../1.44.0/index.html">1.44.0</a>
@@ -116,9 +113,6 @@
                     <a href="../1.39.3/index.html">1.39.3</a>
                 </li>
                 <li class="navbar-item version">
-                    <a href="../1.38.5/index.html">1.38.5</a>
-                </li>
-                <li class="navbar-item version">
                     <a href="../1.37.1/index.html">1.37.1</a>
                 </li>
                 <li class="navbar-item version">
@@ -129,6 +123,9 @@
                 </li>
                 <li class="navbar-item version">
                     <a href="../1.34.1/index.html">1.34.1</a>
+                </li>
+                <li class="navbar-item version">
+                    <a href="../1.33.2/index.html">1.33.2</a>
                 </li>
                 <li class="navbar-item version">
                     <a href="../1.32.2/index.html">1.32.2</a>
@@ -306,7 +303,7 @@
     </nav>
 </header>
             <main class="main">
-              <div class="navigation-container grey-background hidden-xs col-sm-2" data-component="main" data-version="${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}">
+              <div class="navigation-container grey-background hidden-xs col-sm-2" data-component="main" data-version="1.45.0">
   <aside class="navigation" role="navigation">
     <div class="panels">
       <div class="input-group nav-filter-group">
@@ -616,17 +613,33 @@
               <h1>Changelog</h1>
             <div class="article-content">
               <div class="sect1">
-<h2 id="_version_1_38_6"><a class="anchor" href="#_version_1_38_6"></a>Version 1.38.6</h2>
+<h2 id="_version_1_44_0"><a class="anchor" href="#_version_1_44_0"></a>Version 1.44.0</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_bug"><a class="anchor" href="#_bug"></a>Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2102" target="_blank" rel="noopener">TCOMP-2102</a>: Wrong maven resolution with car when using snapshot in prepare-repository goal <a href="search.html?query=build" class="dockey" target="_blank" rel="noopener">build</a> <a href="search.html?query=maven-plugin" class="dockey" target="_blank" rel="noopener">maven-plugin</a></p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2119" target="_blank" rel="noopener">TCOMP-2119</a>: Avro Record : array containing Null. <a href="search.html?query=beam" class="dockey" target="_blank" rel="noopener">beam</a> <a href="search.html?query=schema-record" class="dockey" target="_blank" rel="noopener">schema-record</a></p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2112" target="_blank" rel="noopener">TCOMP-2112</a>: [JDBC] discover schema API is failing on production. <a href="search.html?query=build" class="dockey" target="_blank" rel="noopener">build</a> <a href="search.html?query=maven-plugin" class="dockey" target="_blank" rel="noopener">maven-plugin</a></p>
+</li>
+</ul>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_new_feature"><a class="anchor" href="#_new_feature"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://jira.talendforge.org/browse/TCOMP-2045" target="_blank" rel="noopener">TCOMP-2045</a>: Pass and read meta information about columns. <a href="search.html?query=studio-integration" class="dockey" target="_blank" rel="noopener">studio-integration</a></p>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2085" target="_blank" rel="noopener">TCOMP-2085</a>: Add extras manipulations on Record BuilderImpl <a href="search.html?query=beam" class="dockey" target="_blank" rel="noopener">beam</a> <a href="search.html?query=schema-record" class="dockey" target="_blank" rel="noopener">schema-record</a></p>
 </li>
 <li>
-<p><a href="https://jira.talendforge.org/browse/TCOMP-2096" target="_blank" rel="noopener">TCOMP-2096</a>: Support BigDecimal type in DI integration <a href="search.html?query=schema-record" class="dockey" target="_blank" rel="noopener">schema-record</a> <a href="search.html?query=studio" class="dockey" target="_blank" rel="noopener">studio</a> <a href="search.html?query=studio-integration" class="dockey" target="_blank" rel="noopener">studio-integration</a></p>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2103" target="_blank" rel="noopener">TCOMP-2103</a>: Link affected jira components to issue in changelog as keywords for search <a href="search.html?query=documentation" class="dockey" target="_blank" rel="noopener">documentation</a></p>
 </li>
 </ul>
 </div>
@@ -636,8 +649,425 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://jira.talendforge.org/browse/TCOMP-2070" target="_blank" rel="noopener">TCOMP-2070</a>: Upgrade TSBI to 2.9.18-20220104141654 <a href="search.html?query=build" class="dockey" target="_blank" rel="noopener">build</a> <a href="search.html?query=component-server" class="dockey" target="_blank" rel="noopener">component-server</a> <a href="search.html?query=component-server-vault-proxy" class="dockey" target="_blank" rel="noopener">component-server-vault-proxy</a> <a href="search.html?query=tsbi" class="dockey" target="_blank" rel="noopener">tsbi</a></p>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2098" target="_blank" rel="noopener">TCOMP-2098</a>: Improve m2 discovery process <a href="search.html?query=documentation" class="dockey" target="_blank" rel="noopener">documentation</a></p>
 </li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2104" target="_blank" rel="noopener">TCOMP-2104</a>: Header link should be linked to latest path <a href="search.html?query=documentation" class="dockey" target="_blank" rel="noopener">documentation</a></p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2105" target="_blank" rel="noopener">TCOMP-2105</a>: Upgrade Tomcat to 9.0.60 <a href="search.html?query=component-server" class="dockey" target="_blank" rel="noopener">component-server</a> <a href="search.html?query=maven-plugin" class="dockey" target="_blank" rel="noopener">maven-plugin</a> <a href="search.html?query=starter" class="dockey" target="_blank" rel="noopener">starter</a></p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2108" target="_blank" rel="noopener">TCOMP-2108</a>: Upgrade maven plugins</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2109" target="_blank" rel="noopener">TCOMP-2109</a>: Upgrade git-commit-id-plugin to 4.0.5</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2110" target="_blank" rel="noopener">TCOMP-2110</a>: Replace log4j by reload4j <a href="search.html?query=stitch" class="dockey" target="_blank" rel="noopener">stitch</a></p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2114" target="_blank" rel="noopener">TCOMP-2114</a>: Upgrade TSBI to 2.9.27-20220331162145 <a href="search.html?query=component-server" class="dockey" target="_blank" rel="noopener">component-server</a> <a href="search.html?query=component-server-vault-proxy" class="dockey" target="_blank" rel="noopener">component-server-vault-proxy</a> <a href="search.html?query=starter" class="dockey" target="_blank" rel="noopener">starter</a> <a href="search.html?query=tsbi" class="dockey" target="_blank" rel="noopener">tsbi</a></p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2115" target="_blank" rel="noopener">TCOMP-2115</a>: Upgrade jackson to 2.12.6 due to CVE-2020-36518 <a href="search.html?query=bom" class="dockey" target="_blank" rel="noopener">bom</a></p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2116" target="_blank" rel="noopener">TCOMP-2116</a>: Upgrade log4j2 to 2.17.2</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2117" target="_blank" rel="noopener">TCOMP-2117</a>: Upgrade slf4j to 1.7.33</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2118" target="_blank" rel="noopener">TCOMP-2118</a>: Upgrade tomcat to 9.0.62 (mitigation for CVE-2022-22965) <a href="search.html?query=component-server" class="dockey" target="_blank" rel="noopener">component-server</a> <a href="search.html?query=component-server-vault-proxy" class="dockey" target="_blank" rel="noopener">component-server-vault-proxy</a> <a href="search.html?query=starter" class="dockey" target="_blank" rel="noopener">starter</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_1_43_0"><a class="anchor" href="#_version_1_43_0"></a>Version 1.43.0</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bug_2"><a class="anchor" href="#_bug_2"></a>Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2003" target="_blank" rel="noopener">TCOMP-2003</a>: Maven dependency classifier considered as version in dependencies.txt by Studio</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_feature_2"><a class="anchor" href="#_new_feature_2"></a>New Feature</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2096" target="_blank" rel="noopener">TCOMP-2096</a>: Support BigDecimal type in DI integration</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_work_item_2"><a class="anchor" href="#_work_item_2"></a>Work Item</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2087" target="_blank" rel="noopener">TCOMP-2087</a>: Upgrade Tomcat to 9.0.59 due to CVE-2022-23181</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2088" target="_blank" rel="noopener">TCOMP-2088</a>: Upgrade OpenWebBeans to 2.0.26</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2089" target="_blank" rel="noopener">TCOMP-2089</a>: Upgrade meecrowave to 1.2.13</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2090" target="_blank" rel="noopener">TCOMP-2090</a>: Upgrade johnzon to 1.2.16</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2091" target="_blank" rel="noopener">TCOMP-2091</a>: Upgrade Beam to 2.36.0</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2092" target="_blank" rel="noopener">TCOMP-2092</a>: MvnCoordinateToFileConverter fakes classifiers' support</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2093" target="_blank" rel="noopener">TCOMP-2093</a>: Improve component-runtime documentation site</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2097" target="_blank" rel="noopener">TCOMP-2097</a>: Upgrade cxf to 3.5.1</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_1_42_0"><a class="anchor" href="#_version_1_42_0"></a>Version 1.42.0</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bug_3"><a class="anchor" href="#_bug_3"></a>Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-1803" target="_blank" rel="noopener">TCOMP-1803</a>: RecordBuilder.withRecord(final String name, final Record value) doesn&#8217;t accept null value</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2079" target="_blank" rel="noopener">TCOMP-2079</a>: Intellij plugin fails on plugin startup</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2080" target="_blank" rel="noopener">TCOMP-2080</a>: AvroRecord refuses Union[null, RecordSchema]</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2082" target="_blank" rel="noopener">TCOMP-2082</a>: ComponentManager&#8217;s findDefaultM2 method takes comment as granted</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_work_item_3"><a class="anchor" href="#_work_item_3"></a>Work Item</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2058" target="_blank" rel="noopener">TCOMP-2058</a>: Add dependencies on config</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2074" target="_blank" rel="noopener">TCOMP-2074</a>: Change JSON log format to conform to ECS</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2083" target="_blank" rel="noopener">TCOMP-2083</a>: Give component-runtime version on ComponentManager startup</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2084" target="_blank" rel="noopener">TCOMP-2084</a>: Allow use of i18n in connectors' metadata for custom labels</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_1_41_1"><a class="anchor" href="#_version_1_41_1"></a>Version 1.41.1</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bug_4"><a class="anchor" href="#_bug_4"></a>Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2079" target="_blank" rel="noopener">TCOMP-2079</a>: Intellij plugin fails on plugin startup</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2080" target="_blank" rel="noopener">TCOMP-2080</a>: AvroRecord refuses Union[null, RecordSchema]</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2082" target="_blank" rel="noopener">TCOMP-2082</a>: ComponentManager&#8217;s findDefaultM2 method takes comment as granted</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_1_41_0"><a class="anchor" href="#_version_1_41_0"></a>Version 1.41.0</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bug_5"><a class="anchor" href="#_bug_5"></a>Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2063" target="_blank" rel="noopener">TCOMP-2063</a>: Avro Record Constructor</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2064" target="_blank" rel="noopener">TCOMP-2064</a>: NPE with lookup missconfiguration in Join processor</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2067" target="_blank" rel="noopener">TCOMP-2067</a>: Bug on order columns</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2071" target="_blank" rel="noopener">TCOMP-2071</a>: Define default methods on Schema / Entry / Record interfaces</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_feature_3"><a class="anchor" href="#_new_feature_3"></a>New Feature</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2045" target="_blank" rel="noopener">TCOMP-2045</a>: Pass and read meta information about columns.</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2072" target="_blank" rel="noopener">TCOMP-2072</a>: Ligthen parameters for component-server docker image</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_work_item_4"><a class="anchor" href="#_work_item_4"></a>Work Item</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2057" target="_blank" rel="noopener">TCOMP-2057</a>: AvroSchema : optimize getType by using type fields</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2060" target="_blank" rel="noopener">TCOMP-2060</a>: Upgrade log4j2 to 2.17.0 due to CVE-2021-45105</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2061" target="_blank" rel="noopener">TCOMP-2061</a>: Upgrade netty to 4.1.72.Final due to CVE-2021-43797</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2065" target="_blank" rel="noopener">TCOMP-2065</a>: Internationalized Services as Serializable</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2068" target="_blank" rel="noopener">TCOMP-2068</a>: Upgrade log4j2 to 2.17.1 due to CVE-2021-44832</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2069" target="_blank" rel="noopener">TCOMP-2069</a>: Create a latest tag for component-runtime images</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2070" target="_blank" rel="noopener">TCOMP-2070</a>: Upgrade TSBI to 2.9.18-20220104141654</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2073" target="_blank" rel="noopener">TCOMP-2073</a>: Upgrade maven-core to 3.8.4 due to CVE</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_1_40_0"><a class="anchor" href="#_version_1_40_0"></a>Version 1.40.0</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bug_6"><a class="anchor" href="#_bug_6"></a>Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2047" target="_blank" rel="noopener">TCOMP-2047</a>: RecordBuilder in RowstructVisitor keeps values</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2048" target="_blank" rel="noopener">TCOMP-2048</a>: RowstructVisitor should respect case in member not java convention</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2049" target="_blank" rel="noopener">TCOMP-2049</a>: Incompatible class change on Entry</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2053" target="_blank" rel="noopener">TCOMP-2053</a>: Migration failing when using custom java code in configuration</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_work_item_5"><a class="anchor" href="#_work_item_5"></a>Work Item</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2018" target="_blank" rel="noopener">TCOMP-2018</a>: Optimize Avro Record</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2054" target="_blank" rel="noopener">TCOMP-2054</a>: Upgrade log4j2 to 2.16.0 due to CVE-2021-44228</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_1_39_3"><a class="anchor" href="#_version_1_39_3"></a>Version 1.39.3</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bug_7"><a class="anchor" href="#_bug_7"></a>Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2053" target="_blank" rel="noopener">TCOMP-2053</a>: Migration failing when using custom java code in configuration</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_work_item_6"><a class="anchor" href="#_work_item_6"></a>Work Item</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2054" target="_blank" rel="noopener">TCOMP-2054</a>: Upgrade log4j2 to 2.16.0 due to CVE-2021-44228</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_1_39_2"><a class="anchor" href="#_version_1_39_2"></a>Version 1.39.2</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bug_8"><a class="anchor" href="#_bug_8"></a>Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2049" target="_blank" rel="noopener">TCOMP-2049</a>: Incompatible class change on Entry</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_1_39_1"><a class="anchor" href="#_version_1_39_1"></a>Version 1.39.1</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bug_9"><a class="anchor" href="#_bug_9"></a>Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2047" target="_blank" rel="noopener">TCOMP-2047</a>: RecordBuilder in RowstructVisitor keeps values</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2048" target="_blank" rel="noopener">TCOMP-2048</a>: RowstructVisitor should respect case in member not java convention</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_1_39_0"><a class="anchor" href="#_version_1_39_0"></a>Version 1.39.0</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bug_10"><a class="anchor" href="#_bug_10"></a>Bug</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2019" target="_blank" rel="noopener">TCOMP-2019</a>: Sanitized columns name collision support</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2021" target="_blank" rel="noopener">TCOMP-2021</a>: Missing logic when handling null date values in Record</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2046" target="_blank" rel="noopener">TCOMP-2046</a>: Rowstruct visitor recreates schema at each incoming row</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_feature_4"><a class="anchor" href="#_new_feature_4"></a>New Feature</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2004" target="_blank" rel="noopener">TCOMP-2004</a>: [Runtime convergence] New tck/API to retrieve dataset full content</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2008" target="_blank" rel="noopener">TCOMP-2008</a>: Add ability to insert a schema entry on Record BuilderImpl</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_work_item_7"><a class="anchor" href="#_work_item_7"></a>Work Item</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-1924" target="_blank" rel="noopener">TCOMP-1924</a>: Support Java 17 runtime</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2023" target="_blank" rel="noopener">TCOMP-2023</a>: Upgrade gradle to 6.9.1</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2024" target="_blank" rel="noopener">TCOMP-2024</a>: Upgrade maven-bundle-plugin to 4.2.1</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2025" target="_blank" rel="noopener">TCOMP-2025</a>: Upgrade documentation to latest</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2027" target="_blank" rel="noopener">TCOMP-2027</a>: Upgrage junit to 5.8.1</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2028" target="_blank" rel="noopener">TCOMP-2028</a>: Provide nashorn scripting engine when using java15+</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2029" target="_blank" rel="noopener">TCOMP-2029</a>: Upgrade jaxb to 2.3.5</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2030" target="_blank" rel="noopener">TCOMP-2030</a>: Upgrade Tomcat to 9.0.54 due to CVE-2021-42340</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2031" target="_blank" rel="noopener">TCOMP-2031</a>: Upgrade Beam to 2.33.0</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2032" target="_blank" rel="noopener">TCOMP-2032</a>: Upgrade Spark to 3.2.0</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2035" target="_blank" rel="noopener">TCOMP-2035</a>: Check build w/ Java 17 on CI</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2036" target="_blank" rel="noopener">TCOMP-2036</a>: Upgrade cxf to 3.4.5</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2037" target="_blank" rel="noopener">TCOMP-2037</a>: Upgrade johnzon to 1.2.15</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2038" target="_blank" rel="noopener">TCOMP-2038</a>: Upgrade bouncycastle to 1.69</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2042" target="_blank" rel="noopener">TCOMP-2042</a>: Return a key related to version of connector services and its content</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2043" target="_blank" rel="noopener">TCOMP-2043</a>: Upgrade spotless to 2.17.3 and talend-java-formatter to 0.2.2</p>
+</li>
+<li>
+<p><a href="https://jira.talendforge.org/browse/TCOMP-2044" target="_blank" rel="noopener">TCOMP-2044</a>: Upgrade TSBI to 2.9.2-20211106085418</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_1_38_6"><a class="anchor" href="#_version_1_38_6"></a>Version 1.38.6</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_work_item_8"><a class="anchor" href="#_work_item_8"></a>Work Item</h3>
+<div class="ulist">
+<ul>
 <li>
 <p><a href="https://jira.talendforge.org/browse/TCOMP-2105" target="_blank" rel="noopener">TCOMP-2105</a>: Upgrade Tomcat to 9.0.60 <a href="search.html?query=component-server" class="dockey" target="_blank" rel="noopener">component-server</a> <a href="search.html?query=maven-plugin" class="dockey" target="_blank" rel="noopener">maven-plugin</a> <a href="search.html?query=starter" class="dockey" target="_blank" rel="noopener">starter</a></p>
 </li>
@@ -650,7 +1080,7 @@
 <h2 id="_version_1_38_5"><a class="anchor" href="#_version_1_38_5"></a>Version 1.38.5</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug"><a class="anchor" href="#_bug"></a>Bug</h3>
+<h3 id="_work_item_9"><a class="anchor" href="#_work_item_9"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -665,7 +1095,7 @@
 <h2 id="_version_1_38_4"><a class="anchor" href="#_version_1_38_4"></a>Version 1.38.4</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_2"><a class="anchor" href="#_bug_2"></a>Bug</h3>
+<h3 id="_bug_11"><a class="anchor" href="#_bug_11"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -675,7 +1105,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_2"><a class="anchor" href="#_work_item_2"></a>Work Item</h3>
+<h3 id="_work_item_10"><a class="anchor" href="#_work_item_10"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -690,7 +1120,7 @@
 <h2 id="_version_1_38_3"><a class="anchor" href="#_version_1_38_3"></a>Version 1.38.3</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_3"><a class="anchor" href="#_bug_3"></a>Bug</h3>
+<h3 id="_bug_12"><a class="anchor" href="#_bug_12"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -705,7 +1135,7 @@
 <h2 id="_version_1_38_2"><a class="anchor" href="#_version_1_38_2"></a>Version 1.38.2</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_4"><a class="anchor" href="#_bug_4"></a>Bug</h3>
+<h3 id="_bug_13"><a class="anchor" href="#_bug_13"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -720,7 +1150,7 @@
 <h2 id="_version_1_38_1"><a class="anchor" href="#_version_1_38_1"></a>Version 1.38.1</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_5"><a class="anchor" href="#_bug_5"></a>Bug</h3>
+<h3 id="_bug_14"><a class="anchor" href="#_bug_14"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -735,7 +1165,7 @@
 <h2 id="_version_1_38_0"><a class="anchor" href="#_version_1_38_0"></a>Version 1.38.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_6"><a class="anchor" href="#_bug_6"></a>Bug</h3>
+<h3 id="_bug_15"><a class="anchor" href="#_bug_15"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -773,7 +1203,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_2"><a class="anchor" href="#_new_feature_2"></a>New Feature</h3>
+<h3 id="_new_feature_5"><a class="anchor" href="#_new_feature_5"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -783,7 +1213,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_3"><a class="anchor" href="#_work_item_3"></a>Work Item</h3>
+<h3 id="_work_item_11"><a class="anchor" href="#_work_item_11"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -810,7 +1240,7 @@
 <h2 id="_version_1_37_1"><a class="anchor" href="#_version_1_37_1"></a>Version 1.37.1</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_4"><a class="anchor" href="#_work_item_4"></a>Work Item</h3>
+<h3 id="_work_item_12"><a class="anchor" href="#_work_item_12"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -825,7 +1255,7 @@
 <h2 id="_version_1_37_0"><a class="anchor" href="#_version_1_37_0"></a>Version 1.37.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_7"><a class="anchor" href="#_bug_7"></a>Bug</h3>
+<h3 id="_bug_16"><a class="anchor" href="#_bug_16"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -838,7 +1268,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_3"><a class="anchor" href="#_new_feature_3"></a>New Feature</h3>
+<h3 id="_new_feature_6"><a class="anchor" href="#_new_feature_6"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -848,7 +1278,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_5"><a class="anchor" href="#_work_item_5"></a>Work Item</h3>
+<h3 id="_work_item_13"><a class="anchor" href="#_work_item_13"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -878,7 +1308,7 @@
 <h2 id="_version_1_36_1"><a class="anchor" href="#_version_1_36_1"></a>Version 1.36.1</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_8"><a class="anchor" href="#_bug_8"></a>Bug</h3>
+<h3 id="_bug_17"><a class="anchor" href="#_bug_17"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -893,7 +1323,7 @@
 <h2 id="_version_1_36_0"><a class="anchor" href="#_version_1_36_0"></a>Version 1.36.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_9"><a class="anchor" href="#_bug_9"></a>Bug</h3>
+<h3 id="_bug_18"><a class="anchor" href="#_bug_18"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -909,7 +1339,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_4"><a class="anchor" href="#_new_feature_4"></a>New Feature</h3>
+<h3 id="_new_feature_7"><a class="anchor" href="#_new_feature_7"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -922,7 +1352,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_6"><a class="anchor" href="#_work_item_6"></a>Work Item</h3>
+<h3 id="_work_item_14"><a class="anchor" href="#_work_item_14"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -988,7 +1418,7 @@
 <h2 id="_version_1_35_1"><a class="anchor" href="#_version_1_35_1"></a>Version 1.35.1</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_10"><a class="anchor" href="#_bug_10"></a>Bug</h3>
+<h3 id="_bug_19"><a class="anchor" href="#_bug_19"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1003,7 +1433,7 @@
 <h2 id="_version_1_35_0"><a class="anchor" href="#_version_1_35_0"></a>Version 1.35.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_11"><a class="anchor" href="#_bug_11"></a>Bug</h3>
+<h3 id="_bug_20"><a class="anchor" href="#_bug_20"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1025,7 +1455,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_7"><a class="anchor" href="#_work_item_7"></a>Work Item</h3>
+<h3 id="_work_item_15"><a class="anchor" href="#_work_item_15"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1043,7 +1473,7 @@
 <h2 id="_version_1_34_1"><a class="anchor" href="#_version_1_34_1"></a>Version 1.34.1</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_12"><a class="anchor" href="#_bug_12"></a>Bug</h3>
+<h3 id="_bug_21"><a class="anchor" href="#_bug_21"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1053,7 +1483,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_8"><a class="anchor" href="#_work_item_8"></a>Work Item</h3>
+<h3 id="_work_item_16"><a class="anchor" href="#_work_item_16"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1068,7 +1498,7 @@
 <h2 id="_version_1_34_0"><a class="anchor" href="#_version_1_34_0"></a>Version 1.34.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_13"><a class="anchor" href="#_bug_13"></a>Bug</h3>
+<h3 id="_bug_22"><a class="anchor" href="#_bug_22"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1084,7 +1514,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_5"><a class="anchor" href="#_new_feature_5"></a>New Feature</h3>
+<h3 id="_new_feature_8"><a class="anchor" href="#_new_feature_8"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1094,7 +1524,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_9"><a class="anchor" href="#_work_item_9"></a>Work Item</h3>
+<h3 id="_work_item_17"><a class="anchor" href="#_work_item_17"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1127,7 +1557,7 @@
 <h2 id="_version_1_33_3"><a class="anchor" href="#_version_1_33_3"></a>Version 1.33.3</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_10"><a class="anchor" href="#_work_item_10"></a>Work Item</h3>
+<h3 id="_work_item_18"><a class="anchor" href="#_work_item_18"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1142,7 +1572,7 @@
 <h2 id="_version_1_33_2"><a class="anchor" href="#_version_1_33_2"></a>Version 1.33.2</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_14"><a class="anchor" href="#_bug_14"></a>Bug</h3>
+<h3 id="_bug_23"><a class="anchor" href="#_bug_23"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1157,7 +1587,7 @@
 <h2 id="_version_1_33_1"><a class="anchor" href="#_version_1_33_1"></a>Version 1.33.1</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_15"><a class="anchor" href="#_bug_15"></a>Bug</h3>
+<h3 id="_bug_24"><a class="anchor" href="#_bug_24"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1172,7 +1602,7 @@
 <h2 id="_version_1_33_0"><a class="anchor" href="#_version_1_33_0"></a>Version 1.33.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_16"><a class="anchor" href="#_bug_16"></a>Bug</h3>
+<h3 id="_bug_25"><a class="anchor" href="#_bug_25"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1185,7 +1615,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_6"><a class="anchor" href="#_new_feature_6"></a>New Feature</h3>
+<h3 id="_new_feature_9"><a class="anchor" href="#_new_feature_9"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1198,7 +1628,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_11"><a class="anchor" href="#_work_item_11"></a>Work Item</h3>
+<h3 id="_work_item_19"><a class="anchor" href="#_work_item_19"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1222,7 +1652,7 @@
 <h2 id="_version_1_32_2"><a class="anchor" href="#_version_1_32_2"></a>Version 1.32.2</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_12"><a class="anchor" href="#_work_item_12"></a>Work Item</h3>
+<h3 id="_work_item_20"><a class="anchor" href="#_work_item_20"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1237,7 +1667,7 @@
 <h2 id="_version_1_32_1"><a class="anchor" href="#_version_1_32_1"></a>Version 1.32.1</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_17"><a class="anchor" href="#_bug_17"></a>Bug</h3>
+<h3 id="_bug_26"><a class="anchor" href="#_bug_26"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1252,7 +1682,7 @@
 <h2 id="_version_1_32_0"><a class="anchor" href="#_version_1_32_0"></a>Version 1.32.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_18"><a class="anchor" href="#_bug_18"></a>Bug</h3>
+<h3 id="_bug_27"><a class="anchor" href="#_bug_27"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1265,7 +1695,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_7"><a class="anchor" href="#_new_feature_7"></a>New Feature</h3>
+<h3 id="_new_feature_10"><a class="anchor" href="#_new_feature_10"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1281,7 +1711,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_13"><a class="anchor" href="#_work_item_13"></a>Work Item</h3>
+<h3 id="_work_item_21"><a class="anchor" href="#_work_item_21"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1305,7 +1735,7 @@
 <h2 id="_version_1_31_0"><a class="anchor" href="#_version_1_31_0"></a>Version 1.31.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_19"><a class="anchor" href="#_bug_19"></a>Bug</h3>
+<h3 id="_bug_28"><a class="anchor" href="#_bug_28"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1330,7 +1760,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_14"><a class="anchor" href="#_work_item_14"></a>Work Item</h3>
+<h3 id="_work_item_22"><a class="anchor" href="#_work_item_22"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1357,7 +1787,7 @@
 <h2 id="_version_1_30_0"><a class="anchor" href="#_version_1_30_0"></a>Version 1.30.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_20"><a class="anchor" href="#_bug_20"></a>Bug</h3>
+<h3 id="_bug_29"><a class="anchor" href="#_bug_29"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1370,7 +1800,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_15"><a class="anchor" href="#_work_item_15"></a>Work Item</h3>
+<h3 id="_work_item_23"><a class="anchor" href="#_work_item_23"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1406,7 +1836,7 @@
 <h2 id="_version_1_29_2"><a class="anchor" href="#_version_1_29_2"></a>Version 1.29.2</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_16"><a class="anchor" href="#_work_item_16"></a>Work Item</h3>
+<h3 id="_work_item_24"><a class="anchor" href="#_work_item_24"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1427,7 +1857,7 @@
 <h2 id="_version_1_29_1"><a class="anchor" href="#_version_1_29_1"></a>Version 1.29.1</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_17"><a class="anchor" href="#_work_item_17"></a>Work Item</h3>
+<h3 id="_work_item_25"><a class="anchor" href="#_work_item_25"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1442,7 +1872,7 @@
 <h2 id="_version_1_29_0"><a class="anchor" href="#_version_1_29_0"></a>Version 1.29.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_21"><a class="anchor" href="#_bug_21"></a>Bug</h3>
+<h3 id="_bug_30"><a class="anchor" href="#_bug_30"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1452,7 +1882,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_18"><a class="anchor" href="#_work_item_18"></a>Work Item</h3>
+<h3 id="_work_item_26"><a class="anchor" href="#_work_item_26"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1485,7 +1915,7 @@
 <h2 id="_version_1_28_2"><a class="anchor" href="#_version_1_28_2"></a>Version 1.28.2</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_19"><a class="anchor" href="#_work_item_19"></a>Work Item</h3>
+<h3 id="_work_item_27"><a class="anchor" href="#_work_item_27"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1500,7 +1930,7 @@
 <h2 id="_version_1_28_1"><a class="anchor" href="#_version_1_28_1"></a>Version 1.28.1</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_22"><a class="anchor" href="#_bug_22"></a>Bug</h3>
+<h3 id="_bug_31"><a class="anchor" href="#_bug_31"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1510,7 +1940,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_20"><a class="anchor" href="#_work_item_20"></a>Work Item</h3>
+<h3 id="_work_item_28"><a class="anchor" href="#_work_item_28"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1528,7 +1958,7 @@
 <h2 id="_version_1_28_0"><a class="anchor" href="#_version_1_28_0"></a>Version 1.28.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_21"><a class="anchor" href="#_work_item_21"></a>Work Item</h3>
+<h3 id="_work_item_29"><a class="anchor" href="#_work_item_29"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1561,7 +1991,7 @@
 <h2 id="_version_1_1_27"><a class="anchor" href="#_version_1_1_27"></a>Version 1.1.27</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_23"><a class="anchor" href="#_bug_23"></a>Bug</h3>
+<h3 id="_bug_32"><a class="anchor" href="#_bug_32"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1577,7 +2007,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_8"><a class="anchor" href="#_new_feature_8"></a>New Feature</h3>
+<h3 id="_new_feature_11"><a class="anchor" href="#_new_feature_11"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1587,7 +2017,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_22"><a class="anchor" href="#_work_item_22"></a>Work Item</h3>
+<h3 id="_work_item_30"><a class="anchor" href="#_work_item_30"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1623,7 +2053,7 @@
 <h2 id="_version_1_1_26"><a class="anchor" href="#_version_1_1_26"></a>Version 1.1.26</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_24"><a class="anchor" href="#_bug_24"></a>Bug</h3>
+<h3 id="_bug_33"><a class="anchor" href="#_bug_33"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1639,7 +2069,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_23"><a class="anchor" href="#_work_item_23"></a>Work Item</h3>
+<h3 id="_work_item_31"><a class="anchor" href="#_work_item_31"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1705,7 +2135,7 @@
 <h2 id="_version_1_1_25"><a class="anchor" href="#_version_1_1_25"></a>Version 1.1.25</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_25"><a class="anchor" href="#_bug_25"></a>Bug</h3>
+<h3 id="_bug_34"><a class="anchor" href="#_bug_34"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1720,7 +2150,7 @@
 <h2 id="_version_1_1_24"><a class="anchor" href="#_version_1_1_24"></a>Version 1.1.24</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_26"><a class="anchor" href="#_bug_26"></a>Bug</h3>
+<h3 id="_bug_35"><a class="anchor" href="#_bug_35"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1733,7 +2163,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_24"><a class="anchor" href="#_work_item_24"></a>Work Item</h3>
+<h3 id="_work_item_32"><a class="anchor" href="#_work_item_32"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1751,7 +2181,7 @@
 <h2 id="_version_1_1_23"><a class="anchor" href="#_version_1_1_23"></a>Version 1.1.23</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_27"><a class="anchor" href="#_bug_27"></a>Bug</h3>
+<h3 id="_bug_36"><a class="anchor" href="#_bug_36"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1773,7 +2203,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_9"><a class="anchor" href="#_new_feature_9"></a>New Feature</h3>
+<h3 id="_new_feature_12"><a class="anchor" href="#_new_feature_12"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1786,7 +2216,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_25"><a class="anchor" href="#_work_item_25"></a>Work Item</h3>
+<h3 id="_work_item_33"><a class="anchor" href="#_work_item_33"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1810,7 +2240,7 @@
 <h2 id="_version_1_1_22"><a class="anchor" href="#_version_1_1_22"></a>Version 1.1.22</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_28"><a class="anchor" href="#_bug_28"></a>Bug</h3>
+<h3 id="_bug_37"><a class="anchor" href="#_bug_37"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1820,7 +2250,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_10"><a class="anchor" href="#_new_feature_10"></a>New Feature</h3>
+<h3 id="_new_feature_13"><a class="anchor" href="#_new_feature_13"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1830,7 +2260,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_26"><a class="anchor" href="#_work_item_26"></a>Work Item</h3>
+<h3 id="_work_item_34"><a class="anchor" href="#_work_item_34"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1848,7 +2278,7 @@
 <h2 id="_version_1_1_21"><a class="anchor" href="#_version_1_1_21"></a>Version 1.1.21</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_29"><a class="anchor" href="#_bug_29"></a>Bug</h3>
+<h3 id="_bug_38"><a class="anchor" href="#_bug_38"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1863,7 +2293,7 @@
 <h2 id="_version_1_1_20"><a class="anchor" href="#_version_1_1_20"></a>Version 1.1.20</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_30"><a class="anchor" href="#_bug_30"></a>Bug</h3>
+<h3 id="_bug_39"><a class="anchor" href="#_bug_39"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1897,7 +2327,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_11"><a class="anchor" href="#_new_feature_11"></a>New Feature</h3>
+<h3 id="_new_feature_14"><a class="anchor" href="#_new_feature_14"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1907,7 +2337,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_27"><a class="anchor" href="#_work_item_27"></a>Work Item</h3>
+<h3 id="_work_item_35"><a class="anchor" href="#_work_item_35"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2027,7 +2457,7 @@
 <h2 id="_version_1_1_19"><a class="anchor" href="#_version_1_1_19"></a>Version 1.1.19</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_31"><a class="anchor" href="#_bug_31"></a>Bug</h3>
+<h3 id="_bug_40"><a class="anchor" href="#_bug_40"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2037,7 +2467,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_28"><a class="anchor" href="#_work_item_28"></a>Work Item</h3>
+<h3 id="_work_item_36"><a class="anchor" href="#_work_item_36"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2073,7 +2503,7 @@
 <h2 id="_version_1_1_18"><a class="anchor" href="#_version_1_1_18"></a>Version 1.1.18</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_32"><a class="anchor" href="#_bug_32"></a>Bug</h3>
+<h3 id="_bug_41"><a class="anchor" href="#_bug_41"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2088,7 +2518,7 @@
 <h2 id="_version_1_1_17"><a class="anchor" href="#_version_1_1_17"></a>Version 1.1.17</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_33"><a class="anchor" href="#_bug_33"></a>Bug</h3>
+<h3 id="_bug_42"><a class="anchor" href="#_bug_42"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2116,7 +2546,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_12"><a class="anchor" href="#_new_feature_12"></a>New Feature</h3>
+<h3 id="_new_feature_15"><a class="anchor" href="#_new_feature_15"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2126,7 +2556,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_29"><a class="anchor" href="#_work_item_29"></a>Work Item</h3>
+<h3 id="_work_item_37"><a class="anchor" href="#_work_item_37"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2171,7 +2601,7 @@
 <h2 id="_version_1_1_16"><a class="anchor" href="#_version_1_1_16"></a>Version 1.1.16</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_34"><a class="anchor" href="#_bug_34"></a>Bug</h3>
+<h3 id="_bug_43"><a class="anchor" href="#_bug_43"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2190,7 +2620,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_30"><a class="anchor" href="#_work_item_30"></a>Work Item</h3>
+<h3 id="_work_item_38"><a class="anchor" href="#_work_item_38"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2256,7 +2686,7 @@
 <h2 id="_version_1_1_15"><a class="anchor" href="#_version_1_1_15"></a>Version 1.1.15</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_35"><a class="anchor" href="#_bug_35"></a>Bug</h3>
+<h3 id="_bug_44"><a class="anchor" href="#_bug_44"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2275,7 +2705,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_13"><a class="anchor" href="#_new_feature_13"></a>New Feature</h3>
+<h3 id="_new_feature_16"><a class="anchor" href="#_new_feature_16"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2285,7 +2715,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_31"><a class="anchor" href="#_work_item_31"></a>Work Item</h3>
+<h3 id="_work_item_39"><a class="anchor" href="#_work_item_39"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2348,7 +2778,7 @@
 <h2 id="_version_1_1_15_2"><a class="anchor" href="#_version_1_1_15_2"></a>Version 1.1.15.2</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_32"><a class="anchor" href="#_work_item_32"></a>Work Item</h3>
+<h3 id="_work_item_40"><a class="anchor" href="#_work_item_40"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2363,7 +2793,7 @@
 <h2 id="_version_1_1_15_1"><a class="anchor" href="#_version_1_1_15_1"></a>Version 1.1.15.1</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_new_feature_14"><a class="anchor" href="#_new_feature_14"></a>New Feature</h3>
+<h3 id="_new_feature_17"><a class="anchor" href="#_new_feature_17"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2373,7 +2803,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_33"><a class="anchor" href="#_work_item_33"></a>Work Item</h3>
+<h3 id="_work_item_41"><a class="anchor" href="#_work_item_41"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2388,7 +2818,7 @@
 <h2 id="_version_1_1_14"><a class="anchor" href="#_version_1_1_14"></a>Version 1.1.14</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_36"><a class="anchor" href="#_bug_36"></a>Bug</h3>
+<h3 id="_bug_45"><a class="anchor" href="#_bug_45"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2398,7 +2828,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_15"><a class="anchor" href="#_new_feature_15"></a>New Feature</h3>
+<h3 id="_new_feature_18"><a class="anchor" href="#_new_feature_18"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2408,7 +2838,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_34"><a class="anchor" href="#_work_item_34"></a>Work Item</h3>
+<h3 id="_work_item_42"><a class="anchor" href="#_work_item_42"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2438,7 +2868,7 @@
 <h2 id="_version_1_1_13"><a class="anchor" href="#_version_1_1_13"></a>Version 1.1.13</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_37"><a class="anchor" href="#_bug_37"></a>Bug</h3>
+<h3 id="_bug_46"><a class="anchor" href="#_bug_46"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2463,7 +2893,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_16"><a class="anchor" href="#_new_feature_16"></a>New Feature</h3>
+<h3 id="_new_feature_19"><a class="anchor" href="#_new_feature_19"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2488,7 +2918,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_35"><a class="anchor" href="#_work_item_35"></a>Work Item</h3>
+<h3 id="_work_item_43"><a class="anchor" href="#_work_item_43"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2584,7 +3014,7 @@
 <h2 id="_version_1_1_12"><a class="anchor" href="#_version_1_1_12"></a>Version 1.1.12</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_38"><a class="anchor" href="#_bug_38"></a>Bug</h3>
+<h3 id="_bug_47"><a class="anchor" href="#_bug_47"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2615,7 +3045,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_17"><a class="anchor" href="#_new_feature_17"></a>New Feature</h3>
+<h3 id="_new_feature_20"><a class="anchor" href="#_new_feature_20"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2634,7 +3064,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_36"><a class="anchor" href="#_work_item_36"></a>Work Item</h3>
+<h3 id="_work_item_44"><a class="anchor" href="#_work_item_44"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2682,7 +3112,7 @@
 <h2 id="_version_1_1_11"><a class="anchor" href="#_version_1_1_11"></a>Version 1.1.11</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_39"><a class="anchor" href="#_bug_39"></a>Bug</h3>
+<h3 id="_bug_48"><a class="anchor" href="#_bug_48"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2698,7 +3128,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_37"><a class="anchor" href="#_work_item_37"></a>Work Item</h3>
+<h3 id="_work_item_45"><a class="anchor" href="#_work_item_45"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2719,7 +3149,7 @@
 <h2 id="_version_1_1_10"><a class="anchor" href="#_version_1_1_10"></a>Version 1.1.10</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_40"><a class="anchor" href="#_bug_40"></a>Bug</h3>
+<h3 id="_bug_49"><a class="anchor" href="#_bug_49"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2750,7 +3180,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_38"><a class="anchor" href="#_work_item_38"></a>Work Item</h3>
+<h3 id="_work_item_46"><a class="anchor" href="#_work_item_46"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2849,7 +3279,7 @@
 <h2 id="_version_1_1_9"><a class="anchor" href="#_version_1_1_9"></a>Version 1.1.9</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_41"><a class="anchor" href="#_bug_41"></a>Bug</h3>
+<h3 id="_bug_50"><a class="anchor" href="#_bug_50"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2880,7 +3310,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_18"><a class="anchor" href="#_new_feature_18"></a>New Feature</h3>
+<h3 id="_new_feature_21"><a class="anchor" href="#_new_feature_21"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2896,7 +3326,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_39"><a class="anchor" href="#_work_item_39"></a>Work Item</h3>
+<h3 id="_work_item_47"><a class="anchor" href="#_work_item_47"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2939,7 +3369,7 @@ This is unlikely and should move to beam integration module.</p>
 <h2 id="_version_1_1_8"><a class="anchor" href="#_version_1_1_8"></a>Version 1.1.8</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_42"><a class="anchor" href="#_bug_42"></a>Bug</h3>
+<h3 id="_bug_51"><a class="anchor" href="#_bug_51"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2967,7 +3397,7 @@ This is unlikely and should move to beam integration module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_19"><a class="anchor" href="#_new_feature_19"></a>New Feature</h3>
+<h3 id="_new_feature_22"><a class="anchor" href="#_new_feature_22"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2977,7 +3407,7 @@ This is unlikely and should move to beam integration module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_40"><a class="anchor" href="#_work_item_40"></a>Work Item</h3>
+<h3 id="_work_item_48"><a class="anchor" href="#_work_item_48"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3052,7 +3482,7 @@ This is unlikely and should move to beam integration module.</p>
 <h2 id="_version_1_1_7"><a class="anchor" href="#_version_1_1_7"></a>Version 1.1.7</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_43"><a class="anchor" href="#_bug_43"></a>Bug</h3>
+<h3 id="_bug_52"><a class="anchor" href="#_bug_52"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3071,7 +3501,7 @@ This is unlikely and should move to beam integration module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_20"><a class="anchor" href="#_new_feature_20"></a>New Feature</h3>
+<h3 id="_new_feature_23"><a class="anchor" href="#_new_feature_23"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3084,7 +3514,7 @@ This is unlikely and should move to beam integration module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_41"><a class="anchor" href="#_work_item_41"></a>Work Item</h3>
+<h3 id="_work_item_49"><a class="anchor" href="#_work_item_49"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3132,7 +3562,7 @@ This is unlikely and should move to beam integration module.</p>
 <h2 id="_version_1_1_6"><a class="anchor" href="#_version_1_1_6"></a>Version 1.1.6</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_44"><a class="anchor" href="#_bug_44"></a>Bug</h3>
+<h3 id="_bug_53"><a class="anchor" href="#_bug_53"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3157,7 +3587,7 @@ This is unlikely and should move to beam integration module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_21"><a class="anchor" href="#_new_feature_21"></a>New Feature</h3>
+<h3 id="_new_feature_24"><a class="anchor" href="#_new_feature_24"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3167,7 +3597,7 @@ This is unlikely and should move to beam integration module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_42"><a class="anchor" href="#_work_item_42"></a>Work Item</h3>
+<h3 id="_work_item_50"><a class="anchor" href="#_work_item_50"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3221,7 +3651,7 @@ This is unlikely and should move to beam integration module.</p>
 <h2 id="_version_1_1_5"><a class="anchor" href="#_version_1_1_5"></a>Version 1.1.5</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_45"><a class="anchor" href="#_bug_45"></a>Bug</h3>
+<h3 id="_bug_54"><a class="anchor" href="#_bug_54"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3231,7 +3661,7 @@ This is unlikely and should move to beam integration module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_43"><a class="anchor" href="#_work_item_43"></a>Work Item</h3>
+<h3 id="_work_item_51"><a class="anchor" href="#_work_item_51"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3276,7 +3706,7 @@ This is unlikely and should move to beam integration module.</p>
 <h2 id="_version_1_1_4"><a class="anchor" href="#_version_1_1_4"></a>Version 1.1.4</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_46"><a class="anchor" href="#_bug_46"></a>Bug</h3>
+<h3 id="_bug_55"><a class="anchor" href="#_bug_55"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3286,7 +3716,7 @@ This is unlikely and should move to beam integration module.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_44"><a class="anchor" href="#_work_item_44"></a>Work Item</h3>
+<h3 id="_work_item_52"><a class="anchor" href="#_work_item_52"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3325,7 +3755,7 @@ This is unlikely and should move to beam integration module.</p>
 <h2 id="_version_1_1_3"><a class="anchor" href="#_version_1_1_3"></a>Version 1.1.3</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_47"><a class="anchor" href="#_bug_47"></a>Bug</h3>
+<h3 id="_bug_56"><a class="anchor" href="#_bug_56"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3388,7 +3818,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_22"><a class="anchor" href="#_new_feature_22"></a>New Feature</h3>
+<h3 id="_new_feature_25"><a class="anchor" href="#_new_feature_25"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3398,7 +3828,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_45"><a class="anchor" href="#_work_item_45"></a>Work Item</h3>
+<h3 id="_work_item_53"><a class="anchor" href="#_work_item_53"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3458,7 +3888,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_1_1_2"><a class="anchor" href="#_version_1_1_2"></a>Version 1.1.2</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_48"><a class="anchor" href="#_bug_48"></a>Bug</h3>
+<h3 id="_bug_57"><a class="anchor" href="#_bug_57"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3504,7 +3934,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_23"><a class="anchor" href="#_new_feature_23"></a>New Feature</h3>
+<h3 id="_new_feature_26"><a class="anchor" href="#_new_feature_26"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3514,7 +3944,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_46"><a class="anchor" href="#_work_item_46"></a>Work Item</h3>
+<h3 id="_work_item_54"><a class="anchor" href="#_work_item_54"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3608,7 +4038,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bug_49"><a class="anchor" href="#_bug_49"></a>Bug</h3>
+<h3 id="_bug_58"><a class="anchor" href="#_bug_58"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3621,7 +4051,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_47"><a class="anchor" href="#_work_item_47"></a>Work Item</h3>
+<h3 id="_work_item_55"><a class="anchor" href="#_work_item_55"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3636,7 +4066,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_1_1_0"><a class="anchor" href="#_version_1_1_0"></a>Version 1.1.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_50"><a class="anchor" href="#_bug_50"></a>Bug</h3>
+<h3 id="_bug_59"><a class="anchor" href="#_bug_59"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3730,7 +4160,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_24"><a class="anchor" href="#_new_feature_24"></a>New Feature</h3>
+<h3 id="_new_feature_27"><a class="anchor" href="#_new_feature_27"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3776,7 +4206,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_48"><a class="anchor" href="#_work_item_48"></a>Work Item</h3>
+<h3 id="_work_item_56"><a class="anchor" href="#_work_item_56"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3905,7 +4335,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_1_0_4"><a class="anchor" href="#_version_1_0_4"></a>Version 1.0.4</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_51"><a class="anchor" href="#_bug_51"></a>Bug</h3>
+<h3 id="_bug_60"><a class="anchor" href="#_bug_60"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3939,7 +4369,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_25"><a class="anchor" href="#_new_feature_25"></a>New Feature</h3>
+<h3 id="_new_feature_28"><a class="anchor" href="#_new_feature_28"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3955,7 +4385,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_49"><a class="anchor" href="#_work_item_49"></a>Work Item</h3>
+<h3 id="_work_item_57"><a class="anchor" href="#_work_item_57"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4021,7 +4451,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_1_0_3"><a class="anchor" href="#_version_1_0_3"></a>Version 1.0.3</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_50"><a class="anchor" href="#_work_item_50"></a>Work Item</h3>
+<h3 id="_work_item_58"><a class="anchor" href="#_work_item_58"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4039,7 +4469,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_1_0_2"><a class="anchor" href="#_version_1_0_2"></a>Version 1.0.2</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_52"><a class="anchor" href="#_bug_52"></a>Bug</h3>
+<h3 id="_bug_61"><a class="anchor" href="#_bug_61"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4061,7 +4491,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_26"><a class="anchor" href="#_new_feature_26"></a>New Feature</h3>
+<h3 id="_new_feature_29"><a class="anchor" href="#_new_feature_29"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4071,7 +4501,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_51"><a class="anchor" href="#_work_item_51"></a>Work Item</h3>
+<h3 id="_work_item_59"><a class="anchor" href="#_work_item_59"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4101,7 +4531,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_1_0_1"><a class="anchor" href="#_version_1_0_1"></a>Version 1.0.1</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_53"><a class="anchor" href="#_bug_53"></a>Bug</h3>
+<h3 id="_bug_62"><a class="anchor" href="#_bug_62"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4141,7 +4571,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_27"><a class="anchor" href="#_new_feature_27"></a>New Feature</h3>
+<h3 id="_new_feature_30"><a class="anchor" href="#_new_feature_30"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4175,7 +4605,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_52"><a class="anchor" href="#_work_item_52"></a>Work Item</h3>
+<h3 id="_work_item_60"><a class="anchor" href="#_work_item_60"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4265,7 +4695,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_1_0_0"><a class="anchor" href="#_version_1_0_0"></a>Version 1.0.0</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_54"><a class="anchor" href="#_bug_54"></a>Bug</h3>
+<h3 id="_bug_63"><a class="anchor" href="#_bug_63"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4275,7 +4705,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_53"><a class="anchor" href="#_work_item_53"></a>Work Item</h3>
+<h3 id="_work_item_61"><a class="anchor" href="#_work_item_61"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4293,7 +4723,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_0_0_12"><a class="anchor" href="#_version_0_0_12"></a>Version 0.0.12</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_new_feature_28"><a class="anchor" href="#_new_feature_28"></a>New Feature</h3>
+<h3 id="_new_feature_31"><a class="anchor" href="#_new_feature_31"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4306,7 +4736,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_54"><a class="anchor" href="#_work_item_54"></a>Work Item</h3>
+<h3 id="_work_item_62"><a class="anchor" href="#_work_item_62"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4327,7 +4757,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_0_0_11"><a class="anchor" href="#_version_0_0_11"></a>Version 0.0.11</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_55"><a class="anchor" href="#_bug_55"></a>Bug</h3>
+<h3 id="_bug_64"><a class="anchor" href="#_bug_64"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4337,7 +4767,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_55"><a class="anchor" href="#_work_item_55"></a>Work Item</h3>
+<h3 id="_work_item_63"><a class="anchor" href="#_work_item_63"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4368,7 +4798,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bug_56"><a class="anchor" href="#_bug_56"></a>Bug</h3>
+<h3 id="_bug_65"><a class="anchor" href="#_bug_65"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4390,7 +4820,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_29"><a class="anchor" href="#_new_feature_29"></a>New Feature</h3>
+<h3 id="_new_feature_32"><a class="anchor" href="#_new_feature_32"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4400,7 +4830,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_56"><a class="anchor" href="#_work_item_56"></a>Work Item</h3>
+<h3 id="_work_item_64"><a class="anchor" href="#_work_item_64"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4421,7 +4851,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_0_0_9"><a class="anchor" href="#_version_0_0_9"></a>Version 0.0.9</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_57"><a class="anchor" href="#_work_item_57"></a>Work Item</h3>
+<h3 id="_work_item_65"><a class="anchor" href="#_work_item_65"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4436,7 +4866,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_0_0_8"><a class="anchor" href="#_version_0_0_8"></a>Version 0.0.8</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_58"><a class="anchor" href="#_work_item_58"></a>Work Item</h3>
+<h3 id="_work_item_66"><a class="anchor" href="#_work_item_66"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4457,7 +4887,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_0_0_7"><a class="anchor" href="#_version_0_0_7"></a>Version 0.0.7</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_59"><a class="anchor" href="#_work_item_59"></a>Work Item</h3>
+<h3 id="_work_item_67"><a class="anchor" href="#_work_item_67"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4478,7 +4908,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_0_0_6"><a class="anchor" href="#_version_0_0_6"></a>Version 0.0.6</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_57"><a class="anchor" href="#_bug_57"></a>Bug</h3>
+<h3 id="_bug_66"><a class="anchor" href="#_bug_66"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4491,7 +4921,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_60"><a class="anchor" href="#_work_item_60"></a>Work Item</h3>
+<h3 id="_work_item_68"><a class="anchor" href="#_work_item_68"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4515,7 +4945,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_0_0_5"><a class="anchor" href="#_version_0_0_5"></a>Version 0.0.5</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_61"><a class="anchor" href="#_work_item_61"></a>Work Item</h3>
+<h3 id="_work_item_69"><a class="anchor" href="#_work_item_69"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4563,7 +4993,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_0_0_4"><a class="anchor" href="#_version_0_0_4"></a>Version 0.0.4</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_58"><a class="anchor" href="#_bug_58"></a>Bug</h3>
+<h3 id="_bug_67"><a class="anchor" href="#_bug_67"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4573,7 +5003,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_feature_30"><a class="anchor" href="#_new_feature_30"></a>New Feature</h3>
+<h3 id="_new_feature_33"><a class="anchor" href="#_new_feature_33"></a>New Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4583,7 +5013,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_62"><a class="anchor" href="#_work_item_62"></a>Work Item</h3>
+<h3 id="_work_item_70"><a class="anchor" href="#_work_item_70"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4601,7 +5031,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_0_0_3"><a class="anchor" href="#_version_0_0_3"></a>Version 0.0.3</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_59"><a class="anchor" href="#_bug_59"></a>Bug</h3>
+<h3 id="_bug_68"><a class="anchor" href="#_bug_68"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4616,7 +5046,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_0_0_2"><a class="anchor" href="#_version_0_0_2"></a>Version 0.0.2</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_bug_60"><a class="anchor" href="#_bug_60"></a>Bug</h3>
+<h3 id="_bug_69"><a class="anchor" href="#_bug_69"></a>Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4632,7 +5062,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_work_item_63"><a class="anchor" href="#_work_item_63"></a>Work Item</h3>
+<h3 id="_work_item_71"><a class="anchor" href="#_work_item_71"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4653,7 +5083,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 <h2 id="_version_0_0_1"><a class="anchor" href="#_version_0_0_1"></a>Version 0.0.1</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_work_item_64"><a class="anchor" href="#_work_item_64"></a>Work Item</h3>
+<h3 id="_work_item_72"><a class="anchor" href="#_work_item_72"></a>Work Item</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -4715,6 +5145,13 @@ SchemaParseException &#8658; drop unsupported characters</p>
 </li>
 </ul>
 </div>
+<script>
+(function () {
+  var currentVersion = document.getElementsByClassName('navigation-container')[0].dataset.version.replace(/\./g, '_');
+  var title = document.getElementById('_version_' + currentVersion);
+  if (title) { title.append(' (dev)'); }
+})();
+</script>
 </div>
 </div>
 </div>
@@ -4726,7 +5163,7 @@ SchemaParseException &#8658; drop unsupported characters</p>
 
                 <ul>
                     <li>
-                      <a class="article-side-actions-link" target="_blank" href="https://github.com/Talend/component-runtime/blob/component-runtime-1.38.6/documentation/src/main/antora/modules/ROOT/pages/changelog.adoc">
+                      <a class="article-side-actions-link" target="_blank" href="https://github.com/Talend/component-runtime/edit/master/documentation/src/main/antora/modules/ROOT/pages/changelog.adoc">
                         <i class="fa fa-edit"></i> &nbsp; &nbsp; Suggest an edit
                       </a>
                     </li>
