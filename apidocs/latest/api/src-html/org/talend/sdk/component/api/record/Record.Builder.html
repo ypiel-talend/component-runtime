@@ -302,84 +302,88 @@
 <span class="sourceLineNo">293</span><a id="line.293">         *</a>
 <span class="sourceLineNo">294</span><a id="line.294">         * @return this Builder</a>
 <span class="sourceLineNo">295</span><a id="line.295">         */</a>
-<span class="sourceLineNo">296</span><a id="line.296">        Builder before(String entryName);</a>
-<span class="sourceLineNo">297</span><a id="line.297"></a>
-<span class="sourceLineNo">298</span><a id="line.298">        /**</a>
-<span class="sourceLineNo">299</span><a id="line.299">         * Mark that next entry created {@code withXXXX()} will be after {@code entryName} in schema order.</a>
-<span class="sourceLineNo">300</span><a id="line.300">         *</a>
-<span class="sourceLineNo">301</span><a id="line.301">         * @see</a>
-<span class="sourceLineNo">302</span><a id="line.302">         * &lt;ul&gt;</a>
-<span class="sourceLineNo">303</span><a id="line.303">         * &lt;li&gt;{@link Schema#naturalOrder()}&lt;/li&gt;</a>
-<span class="sourceLineNo">304</span><a id="line.304">         * &lt;li&gt;{@link Schema#getEntriesOrdered()}&lt;/li&gt;</a>
-<span class="sourceLineNo">305</span><a id="line.305">         * &lt;li&gt;{@link Schema#getEntriesOrdered(Comparator)}&lt;/li&gt;</a>
-<span class="sourceLineNo">306</span><a id="line.306">         * &lt;/ul&gt;</a>
-<span class="sourceLineNo">307</span><a id="line.307">         *</a>
-<span class="sourceLineNo">308</span><a id="line.308">         * @param entryName target entry name. This entry &lt;b&gt;must&lt;/b&gt; exist!</a>
+<span class="sourceLineNo">296</span><a id="line.296">        default Builder before(String entryName) {</a>
+<span class="sourceLineNo">297</span><a id="line.297">            throw new UnsupportedOperationException("#before is not implemented");</a>
+<span class="sourceLineNo">298</span><a id="line.298">        }</a>
+<span class="sourceLineNo">299</span><a id="line.299"></a>
+<span class="sourceLineNo">300</span><a id="line.300">        /**</a>
+<span class="sourceLineNo">301</span><a id="line.301">         * Mark that next entry created {@code withXXXX()} will be after {@code entryName} in schema order.</a>
+<span class="sourceLineNo">302</span><a id="line.302">         *</a>
+<span class="sourceLineNo">303</span><a id="line.303">         * @see</a>
+<span class="sourceLineNo">304</span><a id="line.304">         * &lt;ul&gt;</a>
+<span class="sourceLineNo">305</span><a id="line.305">         * &lt;li&gt;{@link Schema#naturalOrder()}&lt;/li&gt;</a>
+<span class="sourceLineNo">306</span><a id="line.306">         * &lt;li&gt;{@link Schema#getEntriesOrdered()}&lt;/li&gt;</a>
+<span class="sourceLineNo">307</span><a id="line.307">         * &lt;li&gt;{@link Schema#getEntriesOrdered(Comparator)}&lt;/li&gt;</a>
+<span class="sourceLineNo">308</span><a id="line.308">         * &lt;/ul&gt;</a>
 <span class="sourceLineNo">309</span><a id="line.309">         *</a>
-<span class="sourceLineNo">310</span><a id="line.310">         * @return this Builder</a>
-<span class="sourceLineNo">311</span><a id="line.311">         */</a>
-<span class="sourceLineNo">312</span><a id="line.312">        Builder after(String entryName);</a>
-<span class="sourceLineNo">313</span><a id="line.313"></a>
-<span class="sourceLineNo">314</span><a id="line.314">        Builder removeEntry(Schema.Entry schemaEntry);</a>
-<span class="sourceLineNo">315</span><a id="line.315"></a>
-<span class="sourceLineNo">316</span><a id="line.316">        Builder updateEntryByName(String name, Schema.Entry schemaEntry);</a>
+<span class="sourceLineNo">310</span><a id="line.310">         * @param entryName target entry name. This entry &lt;b&gt;must&lt;/b&gt; exist!</a>
+<span class="sourceLineNo">311</span><a id="line.311">         *</a>
+<span class="sourceLineNo">312</span><a id="line.312">         * @return this Builder</a>
+<span class="sourceLineNo">313</span><a id="line.313">         */</a>
+<span class="sourceLineNo">314</span><a id="line.314">        default Builder after(String entryName) {</a>
+<span class="sourceLineNo">315</span><a id="line.315">            throw new UnsupportedOperationException("#after");</a>
+<span class="sourceLineNo">316</span><a id="line.316">        }</a>
 <span class="sourceLineNo">317</span><a id="line.317"></a>
-<span class="sourceLineNo">318</span><a id="line.318">        Builder with(Schema.Entry entry, Object value);</a>
+<span class="sourceLineNo">318</span><a id="line.318">        Builder removeEntry(Schema.Entry schemaEntry);</a>
 <span class="sourceLineNo">319</span><a id="line.319"></a>
-<span class="sourceLineNo">320</span><a id="line.320">        Builder withString(String name, String value);</a>
+<span class="sourceLineNo">320</span><a id="line.320">        Builder updateEntryByName(String name, Schema.Entry schemaEntry);</a>
 <span class="sourceLineNo">321</span><a id="line.321"></a>
-<span class="sourceLineNo">322</span><a id="line.322">        Builder withString(Schema.Entry entry, String value);</a>
+<span class="sourceLineNo">322</span><a id="line.322">        Builder with(Schema.Entry entry, Object value);</a>
 <span class="sourceLineNo">323</span><a id="line.323"></a>
-<span class="sourceLineNo">324</span><a id="line.324">        Builder withBytes(String name, byte[] value);</a>
+<span class="sourceLineNo">324</span><a id="line.324">        Builder withString(String name, String value);</a>
 <span class="sourceLineNo">325</span><a id="line.325"></a>
-<span class="sourceLineNo">326</span><a id="line.326">        Builder withBytes(Schema.Entry entry, byte[] value);</a>
+<span class="sourceLineNo">326</span><a id="line.326">        Builder withString(Schema.Entry entry, String value);</a>
 <span class="sourceLineNo">327</span><a id="line.327"></a>
-<span class="sourceLineNo">328</span><a id="line.328">        Builder withDateTime(String name, Date value);</a>
+<span class="sourceLineNo">328</span><a id="line.328">        Builder withBytes(String name, byte[] value);</a>
 <span class="sourceLineNo">329</span><a id="line.329"></a>
-<span class="sourceLineNo">330</span><a id="line.330">        Builder withDateTime(Schema.Entry entry, Date value);</a>
+<span class="sourceLineNo">330</span><a id="line.330">        Builder withBytes(Schema.Entry entry, byte[] value);</a>
 <span class="sourceLineNo">331</span><a id="line.331"></a>
-<span class="sourceLineNo">332</span><a id="line.332">        Builder withDateTime(String name, ZonedDateTime value);</a>
+<span class="sourceLineNo">332</span><a id="line.332">        Builder withDateTime(String name, Date value);</a>
 <span class="sourceLineNo">333</span><a id="line.333"></a>
-<span class="sourceLineNo">334</span><a id="line.334">        Builder withDateTime(Schema.Entry entry, ZonedDateTime value);</a>
+<span class="sourceLineNo">334</span><a id="line.334">        Builder withDateTime(Schema.Entry entry, Date value);</a>
 <span class="sourceLineNo">335</span><a id="line.335"></a>
-<span class="sourceLineNo">336</span><a id="line.336">        Builder withTimestamp(String name, long value);</a>
+<span class="sourceLineNo">336</span><a id="line.336">        Builder withDateTime(String name, ZonedDateTime value);</a>
 <span class="sourceLineNo">337</span><a id="line.337"></a>
-<span class="sourceLineNo">338</span><a id="line.338">        Builder withTimestamp(Schema.Entry entry, long value);</a>
+<span class="sourceLineNo">338</span><a id="line.338">        Builder withDateTime(Schema.Entry entry, ZonedDateTime value);</a>
 <span class="sourceLineNo">339</span><a id="line.339"></a>
-<span class="sourceLineNo">340</span><a id="line.340">        Builder withInt(String name, int value);</a>
+<span class="sourceLineNo">340</span><a id="line.340">        Builder withTimestamp(String name, long value);</a>
 <span class="sourceLineNo">341</span><a id="line.341"></a>
-<span class="sourceLineNo">342</span><a id="line.342">        Builder withInt(Schema.Entry entry, int value);</a>
+<span class="sourceLineNo">342</span><a id="line.342">        Builder withTimestamp(Schema.Entry entry, long value);</a>
 <span class="sourceLineNo">343</span><a id="line.343"></a>
-<span class="sourceLineNo">344</span><a id="line.344">        Builder withLong(String name, long value);</a>
+<span class="sourceLineNo">344</span><a id="line.344">        Builder withInt(String name, int value);</a>
 <span class="sourceLineNo">345</span><a id="line.345"></a>
-<span class="sourceLineNo">346</span><a id="line.346">        Builder withLong(Schema.Entry entry, long value);</a>
+<span class="sourceLineNo">346</span><a id="line.346">        Builder withInt(Schema.Entry entry, int value);</a>
 <span class="sourceLineNo">347</span><a id="line.347"></a>
-<span class="sourceLineNo">348</span><a id="line.348">        Builder withFloat(String name, float value);</a>
+<span class="sourceLineNo">348</span><a id="line.348">        Builder withLong(String name, long value);</a>
 <span class="sourceLineNo">349</span><a id="line.349"></a>
-<span class="sourceLineNo">350</span><a id="line.350">        Builder withFloat(Schema.Entry entry, float value);</a>
+<span class="sourceLineNo">350</span><a id="line.350">        Builder withLong(Schema.Entry entry, long value);</a>
 <span class="sourceLineNo">351</span><a id="line.351"></a>
-<span class="sourceLineNo">352</span><a id="line.352">        Builder withDouble(String name, double value);</a>
+<span class="sourceLineNo">352</span><a id="line.352">        Builder withFloat(String name, float value);</a>
 <span class="sourceLineNo">353</span><a id="line.353"></a>
-<span class="sourceLineNo">354</span><a id="line.354">        Builder withDouble(Schema.Entry entry, double value);</a>
+<span class="sourceLineNo">354</span><a id="line.354">        Builder withFloat(Schema.Entry entry, float value);</a>
 <span class="sourceLineNo">355</span><a id="line.355"></a>
-<span class="sourceLineNo">356</span><a id="line.356">        Builder withBoolean(String name, boolean value);</a>
+<span class="sourceLineNo">356</span><a id="line.356">        Builder withDouble(String name, double value);</a>
 <span class="sourceLineNo">357</span><a id="line.357"></a>
-<span class="sourceLineNo">358</span><a id="line.358">        Builder withBoolean(Schema.Entry entry, boolean value);</a>
+<span class="sourceLineNo">358</span><a id="line.358">        Builder withDouble(Schema.Entry entry, double value);</a>
 <span class="sourceLineNo">359</span><a id="line.359"></a>
-<span class="sourceLineNo">360</span><a id="line.360">        Builder withRecord(Schema.Entry entry, Record value);</a>
+<span class="sourceLineNo">360</span><a id="line.360">        Builder withBoolean(String name, boolean value);</a>
 <span class="sourceLineNo">361</span><a id="line.361"></a>
-<span class="sourceLineNo">362</span><a id="line.362">        /**</a>
-<span class="sourceLineNo">363</span><a id="line.363">         * @since 1.1.6</a>
-<span class="sourceLineNo">364</span><a id="line.364">         *</a>
-<span class="sourceLineNo">365</span><a id="line.365">         * @param name entry name.</a>
-<span class="sourceLineNo">366</span><a id="line.366">         * @param value record value.</a>
-<span class="sourceLineNo">367</span><a id="line.367">         * @return this builder.</a>
-<span class="sourceLineNo">368</span><a id="line.368">         */</a>
-<span class="sourceLineNo">369</span><a id="line.369">        Builder withRecord(String name, Record value);</a>
-<span class="sourceLineNo">370</span><a id="line.370"></a>
-<span class="sourceLineNo">371</span><a id="line.371">        &lt;T&gt; Builder withArray(Schema.Entry entry, Collection&lt;T&gt; values);</a>
-<span class="sourceLineNo">372</span><a id="line.372">    }</a>
-<span class="sourceLineNo">373</span><a id="line.373">}</a>
+<span class="sourceLineNo">362</span><a id="line.362">        Builder withBoolean(Schema.Entry entry, boolean value);</a>
+<span class="sourceLineNo">363</span><a id="line.363"></a>
+<span class="sourceLineNo">364</span><a id="line.364">        Builder withRecord(Schema.Entry entry, Record value);</a>
+<span class="sourceLineNo">365</span><a id="line.365"></a>
+<span class="sourceLineNo">366</span><a id="line.366">        /**</a>
+<span class="sourceLineNo">367</span><a id="line.367">         * @since 1.1.6</a>
+<span class="sourceLineNo">368</span><a id="line.368">         *</a>
+<span class="sourceLineNo">369</span><a id="line.369">         * @param name entry name.</a>
+<span class="sourceLineNo">370</span><a id="line.370">         * @param value record value.</a>
+<span class="sourceLineNo">371</span><a id="line.371">         * @return this builder.</a>
+<span class="sourceLineNo">372</span><a id="line.372">         */</a>
+<span class="sourceLineNo">373</span><a id="line.373">        Builder withRecord(String name, Record value);</a>
+<span class="sourceLineNo">374</span><a id="line.374"></a>
+<span class="sourceLineNo">375</span><a id="line.375">        &lt;T&gt; Builder withArray(Schema.Entry entry, Collection&lt;T&gt; values);</a>
+<span class="sourceLineNo">376</span><a id="line.376">    }</a>
+<span class="sourceLineNo">377</span><a id="line.377">}</a>
 
 
 
