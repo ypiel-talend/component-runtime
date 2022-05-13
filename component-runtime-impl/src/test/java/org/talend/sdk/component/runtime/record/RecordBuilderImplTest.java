@@ -58,7 +58,7 @@ class RecordBuilderImplTest {
                 .build();
         assertEquals(schema, new RecordImpl.BuilderImpl(schema).withString("name", "ok").build().getSchema());
 
-        Schema.EntriesOrder e = new Schema.EntriesOrder(new RecordImpl.BuilderImpl().getCurrentEntries()
+        Schema.EntriesOrder e = Schema.EntriesOrder.of(new RecordImpl.BuilderImpl().getCurrentEntries()
                 .stream()
                 .map(Schema.Entry::getName)
                 .collect(Collectors.toList()));
