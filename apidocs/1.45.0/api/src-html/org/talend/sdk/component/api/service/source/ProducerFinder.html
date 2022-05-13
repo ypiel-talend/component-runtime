@@ -27,29 +27,42 @@
 <span class="sourceLineNo">018</span><a id="line.18">import java.io.Serializable;</a>
 <span class="sourceLineNo">019</span><a id="line.19">import java.util.Iterator;</a>
 <span class="sourceLineNo">020</span><a id="line.20">import java.util.Map;</a>
-<span class="sourceLineNo">021</span><a id="line.21"></a>
-<span class="sourceLineNo">022</span><a id="line.22">import org.talend.sdk.component.api.record.Record;</a>
-<span class="sourceLineNo">023</span><a id="line.23"></a>
-<span class="sourceLineNo">024</span><a id="line.24">/**</a>
-<span class="sourceLineNo">025</span><a id="line.25"> * This service aims to retrieve a record iterator based on a configured dataset of a connector.</a>
-<span class="sourceLineNo">026</span><a id="line.26"> * It's expected that Producer has no extra-configuration on dataset and is a finite producer (not a queue for example).</a>
-<span class="sourceLineNo">027</span><a id="line.27"> */</a>
-<span class="sourceLineNo">028</span><a id="line.28">public interface ProducerFinder extends Serializable {</a>
-<span class="sourceLineNo">029</span><a id="line.29"></a>
-<span class="sourceLineNo">030</span><a id="line.30">    /**</a>
-<span class="sourceLineNo">031</span><a id="line.31">     * Retrieve iterator.</a>
-<span class="sourceLineNo">032</span><a id="line.32">     * </a>
-<span class="sourceLineNo">033</span><a id="line.33">     * @param familyName : connector family name.</a>
-<span class="sourceLineNo">034</span><a id="line.34">     * @param inputName : dataset name.</a>
-<span class="sourceLineNo">035</span><a id="line.35">     * @param version : version of configuration.</a>
-<span class="sourceLineNo">036</span><a id="line.36">     * @param configuration : dataset configuration.</a>
-<span class="sourceLineNo">037</span><a id="line.37">     * @return</a>
-<span class="sourceLineNo">038</span><a id="line.38">     */</a>
-<span class="sourceLineNo">039</span><a id="line.39">    Iterator&lt;Record&gt; find(final String familyName, //</a>
-<span class="sourceLineNo">040</span><a id="line.40">            final String inputName, //</a>
-<span class="sourceLineNo">041</span><a id="line.41">            final int version, //</a>
-<span class="sourceLineNo">042</span><a id="line.42">            final Map&lt;String, String&gt; configuration);</a>
-<span class="sourceLineNo">043</span><a id="line.43">}</a>
+<span class="sourceLineNo">021</span><a id="line.21">import java.util.function.Function;</a>
+<span class="sourceLineNo">022</span><a id="line.22"></a>
+<span class="sourceLineNo">023</span><a id="line.23">import org.talend.sdk.component.api.record.Record;</a>
+<span class="sourceLineNo">024</span><a id="line.24"></a>
+<span class="sourceLineNo">025</span><a id="line.25">/**</a>
+<span class="sourceLineNo">026</span><a id="line.26"> * This service aims to retrieve a record iterator based on a configured dataset of a connector.</a>
+<span class="sourceLineNo">027</span><a id="line.27"> * It's expected that Producer has no extra-configuration on dataset and is a finite producer (not a queue for example).</a>
+<span class="sourceLineNo">028</span><a id="line.28"> */</a>
+<span class="sourceLineNo">029</span><a id="line.29">public interface ProducerFinder extends Serializable {</a>
+<span class="sourceLineNo">030</span><a id="line.30"></a>
+<span class="sourceLineNo">031</span><a id="line.31">    /**</a>
+<span class="sourceLineNo">032</span><a id="line.32">     * Initialize the ProducerFinder</a>
+<span class="sourceLineNo">033</span><a id="line.33">     *</a>
+<span class="sourceLineNo">034</span><a id="line.34">     * @param plugin plugin id</a>
+<span class="sourceLineNo">035</span><a id="line.35">     * @param builder component instantiate builder</a>
+<span class="sourceLineNo">036</span><a id="line.36">     * @param converter function to convert to Record</a>
+<span class="sourceLineNo">037</span><a id="line.37">     *</a>
+<span class="sourceLineNo">038</span><a id="line.38">     * @return initialized ProducerFinder</a>
+<span class="sourceLineNo">039</span><a id="line.39">     */</a>
+<span class="sourceLineNo">040</span><a id="line.40">    ProducerFinder init(final String plugin, final Object builder, final Function&lt;Object, Record&gt; converter);</a>
+<span class="sourceLineNo">041</span><a id="line.41"></a>
+<span class="sourceLineNo">042</span><a id="line.42">    /**</a>
+<span class="sourceLineNo">043</span><a id="line.43">     * Retrieve iterator.</a>
+<span class="sourceLineNo">044</span><a id="line.44">     *</a>
+<span class="sourceLineNo">045</span><a id="line.45">     * @param familyName : connector family name.</a>
+<span class="sourceLineNo">046</span><a id="line.46">     * @param inputName : dataset name.</a>
+<span class="sourceLineNo">047</span><a id="line.47">     * @param version : version of configuration.</a>
+<span class="sourceLineNo">048</span><a id="line.48">     * @param configuration : dataset configuration.</a>
+<span class="sourceLineNo">049</span><a id="line.49">     *</a>
+<span class="sourceLineNo">050</span><a id="line.50">     * @return the Record iterator</a>
+<span class="sourceLineNo">051</span><a id="line.51">     */</a>
+<span class="sourceLineNo">052</span><a id="line.52">    Iterator&lt;Record&gt; find(final String familyName, //</a>
+<span class="sourceLineNo">053</span><a id="line.53">            final String inputName, //</a>
+<span class="sourceLineNo">054</span><a id="line.54">            final int version, //</a>
+<span class="sourceLineNo">055</span><a id="line.55">            final Map&lt;String, String&gt; configuration);</a>
+<span class="sourceLineNo">056</span><a id="line.56">}</a>
 
 
 
